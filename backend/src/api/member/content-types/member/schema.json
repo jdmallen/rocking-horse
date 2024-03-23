@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "members",
+  "info": {
+    "singularName": "member",
+    "pluralName": "members",
+    "displayName": "Cast/Crew Member",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "person": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::person.person"
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "showBio": {
+      "type": "richtext",
+      "required": false
+    },
+    "preferredDisplayName": {
+      "type": "string"
+    },
+    "show": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::show.show",
+      "inversedBy": "members"
+    },
+    "memberType": {
+      "type": "enumeration",
+      "enum": [
+        "Cast",
+        "Crew"
+      ]
+    }
+  }
+}

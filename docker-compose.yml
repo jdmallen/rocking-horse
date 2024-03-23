@@ -1,0 +1,65 @@
+services:
+#  front:
+#    build: ./frontend
+#    ports:
+#      - "80:8000"
+#    restart: unless-stopped
+#    depends_on:
+#      back:
+#        condition: service_healthy
+#    command: ["npm", "run start"]
+#    networks:
+#      - strapi
+
+  back:
+    build: ./backend
+    container_name: "rocking_horse_strapi"
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./backend/config:/opt/app/config
+      - ./backend/src:/opt/app/src
+      - ./backend/package.json:/opt/package.json
+      - ./backend/yarn.lock:/opt/yarn.lock
+      - .env:/opt/app/.env
+      - ./backend/public/uploads:/opt/app/public/uploads
+    env_file: .env
+    environment:
+      - DATABASE_HOST=db
+    networks:
+      - strapi
+    restart: unless-stopped
+
+  db:
+    image: postgres:16
+    platform: linux/amd64
+    container_name: "rocking_horse_strapi_db"
+    user: root
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db/data:/var/lib/postgresql/data
+      - ./db/config:/etc/postgresql
+    env_file: .env
+    networks:
+      - strapi
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d ${POSTGRES_DB} -U ${POSTGRES_USER}" ]
+      interval: 1s
+      timeout: 5s
+      retries: 10
+
+#volumes:
+#  rocking_horse_pgdata:
+#    external: true
+#  rocking_horse_pgconfig:
+#    external: true
+
+networks:
+  strapi:
+    name: Strapi
+    driver: bridge

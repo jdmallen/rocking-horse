@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "venues",
+  "info": {
+    "singularName": "venue",
+    "pluralName": "venues",
+    "displayName": "Address",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "street1": {
+      "type": "string",
+      "required": true
+    },
+    "street2": {
+      "type": "string"
+    },
+    "street3": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "string",
+      "maxLength": 2,
+      "minLength": 2,
+      "required": true,
+      "regex": "^[A-Z]{2}$"
+    },
+    "zip": {
+      "type": "string",
+      "required": true,
+      "minLength": 5,
+      "maxLength": 10,
+      "regex": "^[0-9]{5}(?:-[0-9]{4}){0,1}$"
+    }
+  }
+}

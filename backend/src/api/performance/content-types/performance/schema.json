@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "performances",
+  "info": {
+    "singularName": "performance",
+    "pluralName": "performances",
+    "displayName": "Performance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dateTime": {
+      "type": "datetime",
+      "required": true
+    },
+    "show": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::show.show",
+      "inversedBy": "performances"
+    }
+  }
+}

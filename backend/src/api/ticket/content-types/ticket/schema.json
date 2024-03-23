@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tickets",
+  "info": {
+    "singularName": "ticket",
+    "pluralName": "tickets",
+    "displayName": "Ticket"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "default": "General",
+      "required": true,
+      "unique": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true,
+      "default": 20
+    },
+    "shows": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::show.show",
+      "mappedBy": "tickets"
+    }
+  }
+}
