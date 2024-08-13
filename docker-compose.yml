@@ -9,49 +9,46 @@ services:
 #        condition: service_healthy
 #    command: ["npm", "run start"]
 #    networks:
-#      - strapi
+#      - rhp
 
   back:
-    build: ./backend
-    container_name: "rocking_horse_strapi"
-    depends_on:
-      db:
-        condition: service_healthy
+    image: directus/directus:11.0.0
+    container_name: "rocking_horse_directus"
+#    depends_on:
+#      db:
+#        condition: service_healthy
     ports:
-      - "1337:1337"
+      - 8055:8055
     volumes:
-      - ./backend/config:/opt/app/config
-      - ./backend/src:/opt/app/src
-      - ./backend/package.json:/opt/package.json
-      - ./backend/yarn.lock:/opt/yarn.lock
-      - .env:/opt/app/.env
-      - ./backend/public/uploads:/opt/app/public/uploads
+      - ./backend/database:/directus/database
+      - ./backend/uploads:/directus/uploads
+      - ./backend/extensions:/directus/extensions
     env_file: .env
-    environment:
-      - DATABASE_HOST=db
+#    environment:
+#      - DATABASE_HOST=db
     networks:
-      - strapi
+      - rhp
     restart: unless-stopped
 
-  db:
-    image: postgres:16
-    platform: linux/amd64
-    container_name: "rocking_horse_strapi_db"
-    user: root
-    ports:
-      - 5432:5432
-    volumes:
-      - ./db/data:/var/lib/postgresql/data
-      - ./db/config:/etc/postgresql
-    env_file: .env
-    networks:
-      - strapi
-    restart: unless-stopped
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -d ${POSTGRES_DB} -U ${POSTGRES_USER}" ]
-      interval: 1s
-      timeout: 5s
-      retries: 10
+#  db:
+#    image: postgres:16
+#    platform: linux/amd64
+#    container_name: "rocking_horse_strapi_db"
+#    user: root
+#    ports:
+#      - 5432:5432
+#    volumes:
+#      - ./db/data:/var/lib/postgresql/data
+#      - ./db/config:/etc/postgresql
+#    env_file: .env
+#    networks:
+#      - rhp
+#    restart: unless-stopped
+#    healthcheck:
+#      test: [ "CMD-SHELL", "pg_isready -d ${POSTGRES_DB} -U ${POSTGRES_USER}" ]
+#      interval: 1s
+#      timeout: 5s
+#      retries: 10
 
 #volumes:
 #  rocking_horse_pgdata:
@@ -60,6 +57,6 @@ services:
 #    external: true
 
 networks:
-  strapi:
-    name: Strapi
+  rhp:
+    name: rhp
     driver: bridge
