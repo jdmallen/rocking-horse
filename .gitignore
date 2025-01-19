@@ -5,3 +5,5 @@ readme-images
 **/.yarn
 db
 **/.env*
+.stylelintcache
+
