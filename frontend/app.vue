@@ -1,3 +1,9 @@
+<script lang="js">
+	export const App = {
+		mounted() {},
+	};
+</script>
+
 <template>
 	<div>
 		<NuxtRouteAnnouncer />
