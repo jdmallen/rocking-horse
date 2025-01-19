@@ -1,0 +1,94 @@
+  /* 
+    Setting a bunch of baseline defaults so we can have a consistent starting
+    point for our styles.
+    
+    Credit to @slayingthedragon on YouTube for inspiring much of this!
+  */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+  :root {
+    /* https://coolors.co/7e0112-440812-090f11-6587d7-fff9fb-ed9b40 */
+    /* https://coolors.co/04080f-507dbc-60a561-efcb68-ebbe9b-800000-fafafa */
+    
+    --clr-rich-black: hsl(218, 58%, 4%);
+    --clr-night: hsl(190, 31%, 5%);
+
+    --clr-glaucous: hsl(215, 45%, 53%);
+    --clr-columbia-blue: hsl(201, 38%, 84%);
+    --clr-cerulean: hsl(196, 36%, 41%);
+    --clr-slate-gray: hsl(199, 15%, 51%);
+
+    --clr-asparagus: hsl(121, 28%, 51%);
+
+    --clr-naples-yellow: hsl(44, 81%, 67%);
+
+    --clr-peach: hsl(26, 67%, 76%);
+    --clr-butterscotch: hsl(32, 83%, 59%);
+
+    --clr-maroon: hsl(0, 100%, 25%);
+    --clr-chocolate-cosmos: hsl(350, 79%, 15%);
+    --clr-falu-red: hsl(4, 98%, 25%); /* original Rocking Horse site red */
+    --clr-vermillion: hsl(0, 100%, 60%);
+
+    --clr-seasalt: hsl(0, 0%, 97%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    --clr-dark: var(--clr-rich-black);
+    --clr-light: var(--clr-seasalt);
+
+    --clr-primary: var(--clr-maroon);
+    --clr-secondary: var(--clr-glaucous);
+    --clr-tertiary: var(--clr-peach);
+    --clr-info: var(--clr-columbia-blue);
+    --clr-success: var(--clr-asparagus);
+    --clr-warning: var(--clr-naples-yellow);
+    --clr-danger: var(--clr-vermillion);
+    --clr-emphasis: var(--clr-white);
+
+    --clr-body-color: var(--clr-light);
+    --clr-body-bg: var(--clr-dark);
+  }
+
+  * {
+    margin: 0;
+    line-height: calc(1em + 0.5rem);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Poppins", system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+    user-select: none;
+  }
+
+  button {
+    display: inline-block;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+  }
+
+  a {
+    color: var(--clr-primary)
+  }
+
+  strong {
+    color: var(--clr-secondary)
+  }

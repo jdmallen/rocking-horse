@@ -12,6 +12,6 @@ at excepteur. Laborum veniam amet ut duis proident aute adipisicing nulla. Conse
 ctetur amet mollit adipisicing sunt aliqua ea.
 
 		</p>
-		<button>button</button>
+		<button class="btn">button</button>
 	</div>
 </template>
