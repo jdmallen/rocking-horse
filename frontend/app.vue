@@ -18,10 +18,11 @@
   :root {
     /* https://coolors.co/7e0112-440812-090f11-6587d7-fff9fb-ed9b40 */
 
-    --clr-falu-red: hsl(4, 98%, 25%); /* original Rocking Horse site red */
+    --clr-falu-red: rgb(126, 10, 1); /* original Rocking Horse site red */
     --clr-chocolate-cosmos: hsl(350, 79%, 15%);
     --clr-night: hsl(190, 31%, 5%);
     --clr-glaucous: hsl(222, 60%, 62%);
+    --clr-cerulean: hsl(196, 36%, 41%);
     --clr-snow: hsl(340, 100%, 99%);
     --clr-slate-gray: hsl(199, 15%, 51%);
     --clr-butterscotch: hsl(32, 83%, 59%);
