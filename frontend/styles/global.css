@@ -11,38 +11,38 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 
 	/* https://coolors.co/04080f-507dbc-60a561-efcb68-ebbe9b-800000-fafafa */
 
-	--clr-asparagus: hsl(121deg 28% 51%);
-	--clr-butterscotch: hsl(32deg 83% 59%);
-	--clr-cerulean: hsl(196deg 36% 41%);
-	--clr-chocolate-cosmos: hsl(350deg 79% 15%);
-	--clr-columbia-blue: hsl(201deg 38% 84%);
-	--clr-glaucous: hsl(215deg 45% 53%);
-	--clr-maroon: hsl(0deg 100% 25%);
-	--clr-naples-yellow: hsl(44deg 81% 67%);
-	--clr-night: hsl(190deg 31% 5%);
-	--clr-peach: hsl(26deg 67% 76%);
-	--clr-rich-black: hsl(218deg 58% 4%);
-	--clr-slate-gray: hsl(199deg 15% 51%);
+	--clr-asparagus: 121deg 28% 51%;
+	--clr-butterscotch: 32deg 83% 59%;
+	--clr-cerulean: 196deg 36% 41%;
+	--clr-chocolate-cosmos: 350deg 79% 15%;
+	--clr-columbia-blue: 201deg 38% 84%;
+	--clr-glaucous: 215deg 45% 53%;
+	--clr-maroon: 0deg 100% 25%;
+	--clr-naples-yellow: 44deg 81% 67%;
+	--clr-night: 190deg 31% 5%;
+	--clr-peach: 26deg 67% 76%;
+	--clr-rich-black: 218deg 58% 4%;
+	--clr-slate-gray: 199deg 15% 51%;
 	
 	/* original Rocking Horse site red */
-	--clr-falu-red: hsl(4deg 98% 25%);
+	--clr-falu-red: 4deg 98% 25%;
 
-	--clr-vermillion: hsl(0deg 100% 60%);
-	--clr-seasalt: hsl(0deg 0% 97%);
-	--clr-white: hsl(0deg 0% 100%);
-	--clr-dark: var(--clr-rich-black);
-	--clr-light: var(--clr-seasalt);
+	--clr-vermillion: 0deg 100% 60%;
+	--clr-seasalt: 0deg 0% 97%;
+	--clr-white: 0deg 0% 100%;
+	--clr-dark: hsl(var(--clr-rich-black));
+	--clr-light: hsl(var(--clr-seasalt));
 	
-	--clr-primary: var(--clr-maroon);
-	--clr-secondary: var(--clr-glaucous);
-	--clr-tertiary: var(--clr-peach);
-	--clr-info: var(--clr-columbia-blue);
-	--clr-success: var(--clr-asparagus);
-	--clr-warning: var(--clr-naples-yellow);
-	--clr-danger: var(--clr-vermillion);
-	--clr-emphasis: var(--clr-white);
-	--clr-body-color: var(--clr-light);
-	--clr-body-bg: var(--clr-dark);
+	--clr-primary: hsl(var(--clr-maroon));
+	--clr-secondary: hsl(var(--clr-glaucous));
+	--clr-tertiary: hsl(var(--clr-peach));
+	--clr-info: hsl(var(--clr-columbia-blue));
+	--clr-success: hsl(var(--clr-asparagus));
+	--clr-warning: hsl(var(--clr-naples-yellow));
+	--clr-danger: hsl(var(--clr-vermillion));
+	--clr-emphasis: hsl(var(--clr-white));
+	--clr-body-color: hsl(var(--clr-light));
+	--clr-body-bg: hsl(var(--clr-dark));
 }
 
 * {
