@@ -5,5 +5,12 @@ export default {
 	extends: ["stylelint-config-standard-vue"],
 	rules: {
 		"custom-property-empty-line-before": null,
+		"comment-empty-line-before": [
+			"always",
+			{
+				except: ["first-nested"],
+				ignore: ["after-comment", "stylelint-commands"],
+			},
+		],
 	},
 };

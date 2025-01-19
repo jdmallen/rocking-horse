@@ -1,3 +1,21 @@
+/* xs */
+/* @media screen and (width >= 475px) {} */
+
+/* sm */
+/* @media screen and (width >= 640px) {} */
+
+/* md */
+/* @media screen and (width >= 768px) {} */
+
+/* lg */
+/* @media screen and (width >= 1024px) {} */
+
+/* xl */
+/* @media screen and (width >= 1280px) {} */
+
+/* 2xl */
+/* @media screen and (width >= 1536px) {} */
+
 .btn {
 	display: inline-block;
 	font-weight: 600;
@@ -7,5 +25,65 @@
 	color: var(--body-color);
 	padding: 0.5em 1em;
 	border-radius: 0.25em;
-	box-shadow: 0 0.25em 0.5em hsl(var(--clr-primary) / 50%);
+	box-shadow: 0 0 0.5em 0.1em hsl(var(--clr-white) / 25%);
+	transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+.btn:hover {
+	box-shadow: 0 0 0.5em 0.1em hsl(var(--clr-white) / 50%);
+}
+
+.btn:active {
+	transform: translateY(0.125em);
+	box-shadow: 0 0 0.5em 0.1em hsl(var(--clr-white) / 0%);
+}
+
+.container {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+/* xs */
+@media screen and (width >= 475px) {
+	.container {
+		max-width: 475px;
+	}	
+}
+
+/* sm */
+@media screen and (width >= 640px) {
+	.container {
+		max-width: 640px;
+	}	
+}
+
+/* md */
+@media screen and (width >= 768px) {
+	.container {
+		max-width: 768px;
+	}	
+}
+
+/* lg */
+@media screen and (width >= 1024px) {
+	.container {
+		max-width: 1024px;
+	}	
+}
+
+/* xl */
+@media screen and (width >= 1280px) {
+	.container {
+		max-width: 1280px;
+	}	
+}
+
+/* 2xl */
+@media screen and (width >= 1536px) {
+	.container {
+		max-width: 1536px;
+	}	
 }

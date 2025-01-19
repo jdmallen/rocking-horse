@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<article class="container">
 		<h1>Home Page</h1>
 		<p>
 			<a>Lorem ipsum dolor sit amet,</a> ipsum ut deserunt qui Lorem dolor nulla
@@ -13,5 +13,5 @@
 			adipisicing nulla. Conse ctetur amet mollit adipisicing sunt aliqua ea.
 		</p>
 		<button class="btn">button</button>
-	</div>
+	</article>
 </template>
