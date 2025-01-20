@@ -1,6 +1,6 @@
-<script lang="ts">
+<script lang="js">
 	useHead({
-		title: "Rocking Horse Produtions",
+		title: "Rocking Horse Productions",
 		meta: [
 			{
 				name: "description",

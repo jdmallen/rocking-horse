@@ -26,8 +26,7 @@
 	padding: 0.5em 1em;
 	border-radius: 0.25em;
 	box-shadow: 0 0 0.5em 0.1em var(--clr-box-shadow);
-	transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
-
+	transition: transform 0.05s ease, box-shadow 0.1s ease;
 }
 
 .btn:hover {
