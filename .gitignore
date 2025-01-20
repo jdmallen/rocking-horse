@@ -6,4 +6,4 @@ readme-images
 db
 **/.env*
 .stylelintcache
-
+.cache*
