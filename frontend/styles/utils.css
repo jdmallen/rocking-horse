@@ -22,15 +22,16 @@
 	text-decoration: none;
 	letter-spacing: 0.05em;
 	background-color: var(--clr-primary);
-	color: var(--body-color);
+	color: var(--clr-light);
 	padding: 0.5em 1em;
 	border-radius: 0.25em;
-	box-shadow: 0 0 0.5em 0.1em hsl(var(--clr-white) / 25%);
+	box-shadow: 0 0 0.5em 0.1em var(--clr-box-shadow);
 	transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+
 }
 
 .btn:hover {
-	box-shadow: 0 0 0.5em 0.1em hsl(var(--clr-white) / 50%);
+	box-shadow: 0 0 0.5em 0.1em var(--clr-box-shadow-emphasis);
 }
 
 .btn:active {
