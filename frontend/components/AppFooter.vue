@@ -1,0 +1,3 @@
+<template>
+	FOOTER BOIII
+</template>

@@ -12,5 +12,6 @@ export default {
 				ignore: ["after-comment", "stylelint-commands"],
 			},
 		],
+		"selector-class-pattern": null,
 	},
 };

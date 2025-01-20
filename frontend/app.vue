@@ -16,9 +16,11 @@
 <template>
 	<div>
 		<NuxtRouteAnnouncer />
+		<AppHeader />
 		<NuxtLayout>
 			<NuxtPage />
 		</NuxtLayout>
+		<AppFooter />
 	</div>
 </template>
 
