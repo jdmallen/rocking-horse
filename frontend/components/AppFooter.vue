@@ -1,3 +1,1 @@
-<template>
-	FOOTER BOIII
-</template>
+<template>FOOTER BOIII</template>

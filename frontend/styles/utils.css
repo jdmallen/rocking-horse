@@ -36,7 +36,7 @@
 
 .btn:active {
 	transform: translateY(0.125em);
-	box-shadow: 0 0 0.5em 0.1em hsl(var(--clr-white) / 0%);
+	box-shadow: none;
 }
 
 .container {

@@ -1,5 +1,5 @@
 <script lang="js">
-	export const AppHeader = {
+	export default {
 		data() {
 			return {
 				isMobileNavOpen: false,
@@ -8,6 +8,15 @@
 		methods: {
 			toggleMobileNav() {
 				this.isMobileNavOpen = !this.isMobileNavOpen;
+				if (this.isMobileNavOpen) {
+					document.body.style.overflowY = "hidden";
+				} else {
+					document.body.style.overflowY = "auto";
+				}
+			},
+			closeMobileNav() {
+				this.isMobileNavOpen = false;
+				document.body.style.overflowY = "auto";
 			},
 		},
 	};
@@ -21,7 +30,7 @@
 					<a class="header__link" href="#">Shows</a>
 				</li>
 				<li>
-					<a class="header__link" href="#">Auditions</a>
+					<a class="header__link" href="#">Contribute</a>
 				</li>
 				<li>
 					<a class="header__link" href="#">History</a>
@@ -47,8 +56,15 @@
 						</svg>
 					</button>
 				</li>
+				<li>
+					<button class="btn header__tickets">Tickets</button>
+				</li>
 			</ul>
-			<button aria-label="mobile nav button" class="header__bars" @click="toggleMobileNav()">
+			<button
+				aria-label="mobile nav button"
+				class="header__bars"
+				@click="toggleMobileNav()"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
@@ -64,17 +80,28 @@
 		</nav>
 	</header>
 	<!-- Mobile Navigation -->
-	<div class="mobile-nav">
+	<div class="mobile-nav" :class="isMobileNavOpen ? 'open' : ''">
 		<nav>
 			<ul class="mobile-nav__menu">
 				<li>
-					<a class="mobile-nav__link" href="#about">About</a>
+					<a class="mobile-nav__link" href="#" @click="closeMobileNav()"
+						>Shows</a
+					>
 				</li>
 				<li>
-					<a class="mobile-nav__link" href="#featured">Work</a>
+					<a class="mobile-nav__link" href="#" @click="closeMobileNav()"
+						>Contribute</a
+					>
 				</li>
 				<li>
-					<a class="mobile-nav__link" href="#contact">Contact</a>
+					<a class="mobile-nav__link" href="#" @click="closeMobileNav()"
+						>History</a
+					>
+				</li>
+				<li>
+					<a class="mobile-nav__link" href="#" @click="closeMobileNav()"
+						>Gallery</a
+					>
 				</li>
 				<li class="mobile-nav__link-line" />
 				<li>
@@ -92,6 +119,11 @@
 								d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
 							/>
 						</svg>
+					</button>
+				</li>
+				<li>
+					<button class="btn header__tickets" @click="closeMobileNav()">
+						Tickets
 					</button>
 				</li>
 			</ul>
@@ -198,6 +230,10 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
+	}
+
+	.mobile-nav.open {
+		display: flex;
 	}
 
 	.mobile-nav__menu {
