@@ -1,6 +1,6 @@
 <template>
-	<div>
-		<article class="container">
+	<div class="container">
+		<article>
 			<h1>Home Page</h1>
 			<p>
 				<a>Lorem ipsum dolor sit amet,</a> ipsum ut deserunt qui Lorem dolor
@@ -14,7 +14,6 @@
 				aute adipisicing nulla. Conse ctetur amet mollit adipisicing sunt aliqua
 				ea.
 			</p>
-			<button class="btn">button</button>
 		</article>
 	</div>
 </template>

@@ -38,12 +38,22 @@
 	box-shadow: none;
 }
 
+.form-input {
+	padding: 0 0.5em;
+}
+
+.logo-icon {
+	height: 20px; /* Using px here only because of iconfiy SVG icons already being 20px */
+}
+
 .container {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
+	display: flex;
+	justify-content: center;
 }
 
 .section {
