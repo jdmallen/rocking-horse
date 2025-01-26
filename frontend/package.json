@@ -37,5 +37,12 @@
 		"stylelint-config-standard-vue": "^1.0.0",
 		"stylelint-order": "^6.0.4",
 		"vite": "^6.0.7"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@parcel/watcher",
+			"esbuild",
+			"sharp"
+		]
 	}
 }

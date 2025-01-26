@@ -64,38 +64,83 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 	--hsl-slate-gray-huesat: 199deg 15%;
 	--hsl-slate-gray-lum: 51%;
 
-	--clr-dark: hsl(var(--hsl-rich-black-huesat) var(--hsl-rich-black-lum));
-	--clr-light: hsl(var(--hsl-seasalt-huesat) var(--hsl-seasalt-lum));
-	--clr-slate: hsl(var(--hsl-slate-gray-huesat) var(--hsl-slate-gray-lum));
+	--hsl-dark-huesat: var(--hsl-rich-black-huesat);
+	--hsl-dark-lum: var(--hsl-rich-black-lum);
+	--hsl-light-huesat: var(--hsl-seasalt-huesat);
+	--hsl-light-lum: var(--hsl-seasalt-lum);
+	--hsl-slate-huesat: var(--hsl-slate-gray-huesat);
+	--hsl-slate-lum: var(--hsl-slate-gray-lum);
 
-	--clr-primary: hsl(var(--hsl-maroon-huesat) var(--hsl-maroon-lum));
-	--clr-secondary: hsl(var(--hsl-glaucous-huesat) var(--hsl-glaucous-lum));
-	--clr-tertiary: hsl(var(--hsl-peach-huesat) var(--hsl-peach-lum));
-	--clr-info: hsl(var(--hsl-columbia-blue-huesat) var(--hsl-columbia-blue-lum));
-	--clr-success: hsl(var(--hsl-asparagus-huesat) var(--hsl-asparagus-lum));
-	--clr-warning: hsl(var(--hsl-naples-yellow-huesat) var(--hsl-naples-yellow-lum));
-	--clr-danger: hsl(var(--hsl-vermillion-huesat) var(--hsl-vermillion-lum));
+	--clr-dark: hsl(var(--hsl-dark-huesat) var(--hsl-dark-lum));
+	--clr-light: hsl(var(--hsl-light-huesat) var(--hsl-light-lum));
+	--clr-slate: hsl(var(--hsl-slate-huesat) var(--hsl-slate-lum));
+
+	--hsl-primary-huesat: var(--hsl-maroon-huesat);
+	--hsl-primary-lum: var(--hsl-maroon-lum);
+	--hsl-secondary-huesat: var(--hsl-glaucous-huesat);
+	--hsl-secondary-lum: var(--hsl-glaucous-lum);
+	--hsl-tertiary-huesat: var(--hsl-peach-huesat);
+	--hsl-tertiary-lum: var(--hsl-peach-lum);
+	--hsl-info-huesat: var(--hsl-columbia-blue-huesat);
+	--hsl-info-lum: var(--hsl-columbia-blue-lum);
+	--hsl-success-huesat: var(--hsl-asparagus-huesat);
+	--hsl-success-lum: var(--hsl-asparagus-lum);
+	--hsl-warning-huesat: var(--hsl-naples-yellow-huesat);
+	--hsl-warning-lum: var(--hsl-naples-yellow-lum);
+	--hsl-danger-huesat: var(--hsl-vermillion-huesat);
+	--hsl-danger-lum: var(--hsl-vermillion-lum);
+
+	--clr-primary: hsl(var(--hsl-primary-huesat) var(--hsl-primary-lum));
+	--clr-secondary: hsl(var(--hsl-secondary-huesat) var(--hsl-secondary-lum));
+	--clr-tertiary: hsl(var(--hsl-tertiary-huesat) var(--hsl-tertiary-lum));
+	--clr-info: hsl(var(--hsl-info-huesat) var(--hsl-info-lum));
+	--clr-success: hsl(var(--hsl-success-huesat) var(--hsl-success-lum));
+	--clr-warning: hsl(var(--hsl-warning-huesat) var(--hsl-warning-lum));
+	--clr-danger: hsl(var(--hsl-danger-huesat) var(--hsl-danger-lum));
 	
-	--clr-emphasis: hsl(var(--hsl-white-huesat) var(--hsl-white-lum));
-	--clr-body-color: var(--clr-light);
-	--clr-body-bg: var(--clr-dark);
-	--clr-box-shadow: hsl(var(--hsl-seasalt-huesat) var(--hsl-seasalt-lum) / 25%);
-	--clr-box-shadow-emphasis: hsl(var(--hsl-white-huesat) var(--hsl-white-lum) / 50%);
+	--hsl-emphasis-huesat: var(--hsl-white-huesat);
+	--hsl-emphasis-lum: var(--hsl-white-lum);
+	--hsl-body-color-huesat: var(--hsl-light-huesat);
+	--hsl-body-color-lum: var(--hsl-light-lum);
+	--hsl-body-bg-huesat: var(--hsl-dark-huesat);
+	--hsl-body-bg-lum: var(--hsl-dark-lum);
+	--hsl-box-shadow-huesat: var(--hsl-seasalt-huesat);
+	--hsl-box-shadow-lum: var(--hsl-seasalt-lum);
+	--hsl-box-shadow-emphasis-huesat: var(--hsl-white-huesat);
+	--hsl-box-shadow-emphasis-lum: var(--hsl-white-lum);
+
+	--clr-emphasis: hsl(var(--hsl-emphasis-huesat) var(--hsl-emphasis-lum));
+	--clr-body-color: hsl(var(--hsl-body-color-huesat) var(--hsl-body-color-lum));
+	--clr-body-bg: hsl(var(--hsl-body-bg-huesat) var(--hsl-body-bg-lum));
+	--clr-box-shadow: hsl(var(--hsl-box-shadow-huesat) var(--hsl-box-shadow-lum) / 25%);
+	--clr-box-shadow-emphasis: hsl(var(--hsl-box-shadow-emphasis-huesat) var(--hsl-box-shadow-emphasis-lum) / 50%);
 
 	@media (prefers-color-scheme: light) {
-		--clr-body-color: var(--clr-dark);
-		--clr-emphasis: hsl(var(--hsl-black-huesat) var(--hsl-black-lum));
-		--clr-body-bg: var(--clr-light);
-		--clr-box-shadow: hsl(var(--hsl-rich-black-huesat) var(--hsl-rich-black-lum) / 25%);
-		--clr-box-shadow-emphasis: hsl(var(--hsl-black-huesat) var(--hsl-black-lum) / 50%);
+		--hsl-body-color-huesat: var(--hsl-dark-huesat);
+		--hsl-body-color-lum: var(--hsl-dark-lum);
+		--hsl-body-bg-huesat: var(--hsl-light-huesat);
+		--hsl-body-bg-lum: var(--hsl-light-lum);
+
+		--hsl-emphasis-huesat: var(--hsl-black-huesat);
+		--hsl-emphasis-lum: var(--hsl-black-lum);
+		--hsl-box-shadow-huesat: var(--hsl-rich-black-huesat);
+		--hsl-box-shadow-lum: var(--hsl-rich-black-lum);
+		--hsl-box-shadow-emphasis-huesat: var(--hsl-black-huesat);
+		--hsl-box-shadow-emphasis-lum: var(--hsl-black-lum);
 	}
 
 	@media (prefers-color-scheme: dark) {
-		--clr-body-color: var(--clr-light);
-		--clr-emphasis: hsl(var(--hsl-white-huesat) var(--hsl-white-lum));
-		--clr-body-bg: var(--clr-dark);
-		--clr-box-shadow: hsl(var(--hsl-seasalt-huesat) var(--hsl-seasalt-lum) / 25%);
-		--clr-box-shadow-emphasis: hsl(var(--hsl-white-huesat) var(--hsl-white-lum) / 50%);
+		--hsl-body-color-huesat: var(--hsl-light-huesat);
+		--hsl-body-color-lum: var(--hsl-light-lum);
+		--hsl-body-bg-huesat: var(--hsl-dark-huesat);
+		--hsl-body-bg-lum: var(--hsl-dark-lum);
+
+		--hsl-emphasis-huesat: var(--hsl-white-huesat);
+		--hsl-emphasis-lum: var(--hsl-white-lum);
+		--hsl-box-shadow-huesat: var(--hsl-seasalt-huesat);
+		--hsl-box-shadow-lum: var(--hsl-seasalt-lum);
+		--hsl-box-shadow-emphasis-huesat: var(--hsl-white-huesat);
+		--hsl-box-shadow-emphasis-lum: var(--hsl-white-lum);
 	}
 
 	/* sizes */
