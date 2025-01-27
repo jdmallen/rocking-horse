@@ -12,34 +12,26 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 	/* https://coolors.co/04080f-507dbc-60a561-efcb68-ebbe9b-800000-fafafa */
 	
 	/* colors */
-	--hsl-asparagus-huesat: 121deg 28%;
-	--hsl-asparagus-lum: 51%;
-	--hsl-butterscotch-huesat: 32deg 83%;
-	--hsl-butterscotch-lum: 59%;
-	--hsl-cerulean-huesat: 196deg 36%;
-	--hsl-cerulean-lum: 41%;
-	--hsl-chocolate-cosmos-huesat: 346deg 88%;
-	--hsl-chocolate-cosmos-lum: 19%;
-	--hsl-columbia-blue-huesat: 201deg 38%;
-	--hsl-columbia-blue-lum: 84%;
+	--hsl-charcoal-huesat: 197deg 37%;
+	--hsl-charcoal-lum: 24%;
+
+	--hsl-persian-green-huesat: 173deg 58%;
+	--hsl-persian-green-lum: 39%;
+
+	--hsl-saffron-huesat: 43deg 74%;
+	--hsl-saffron-lum: 66%;
+
+	--hsl-sandy-brown-huesat: 27deg 87%;
+	--hsl-sandy-brown-lum: 67%;
+
+	--hsl-burnt-sienna-huesat: 12deg 76%;
+	--hsl-burnt-sienna-lum: 61%;
+
+	--hsl-red-pantone-huesat: 353deg 86%;
+	--hsl-red-pantone-lum: 54%;
+
 	--hsl-falu-red-huesat: 4deg 98%; /* original Rocking Horse site red */
 	--hsl-falu-red-lum: 25%;/* original Rocking Horse site red */
-	--hsl-glaucous-huesat: 215deg 45%;
-	--hsl-glaucous-lum: 53%;
-	--hsl-light-blue-huesat: 182deg 32%;
-	--hsl-light-blue-lum: 82%;
-	--hsl-maroon-huesat: 0deg 100%;
-	--hsl-maroon-lum: 30%; /* originally 25% */
-	--hsl-naples-yellow-huesat: 44deg 81%;
-	--hsl-naples-yellow-lum: 67%;
-	--hsl-night-huesat: 190deg 31%;
-	--hsl-night-lum: 5%;
-	--hsl-peach-huesat: 26deg 67%;
-	--hsl-peach-lum: 76%;
-	--hsl-pistachio-huesat: 78deg 56%;
-	--hsl-pistachio-lum: 66%;
-	--hsl-vermillion-huesat: 0deg 100%;
-	--hsl-vermillion-lum: 60%;
 
 	/* neutrals */
 	--hsl-anti-flat-white-huesat: 200deg 7%;
@@ -75,20 +67,20 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 	--clr-light: hsl(var(--hsl-light-huesat) var(--hsl-light-lum));
 	--clr-slate: hsl(var(--hsl-slate-huesat) var(--hsl-slate-lum));
 
-	--hsl-primary-huesat: var(--hsl-maroon-huesat);
-	--hsl-primary-lum: var(--hsl-maroon-lum);
-	--hsl-secondary-huesat: var(--hsl-glaucous-huesat);
-	--hsl-secondary-lum: var(--hsl-glaucous-lum);
-	--hsl-tertiary-huesat: var(--hsl-peach-huesat);
-	--hsl-tertiary-lum: var(--hsl-peach-lum);
-	--hsl-info-huesat: var(--hsl-columbia-blue-huesat);
-	--hsl-info-lum: var(--hsl-columbia-blue-lum);
-	--hsl-success-huesat: var(--hsl-asparagus-huesat);
-	--hsl-success-lum: var(--hsl-asparagus-lum);
-	--hsl-warning-huesat: var(--hsl-naples-yellow-huesat);
-	--hsl-warning-lum: var(--hsl-naples-yellow-lum);
-	--hsl-danger-huesat: var(--hsl-vermillion-huesat);
-	--hsl-danger-lum: var(--hsl-vermillion-lum);
+	--hsl-primary-huesat: var(--hsl-charcoal-huesat);
+	--hsl-primary-lum: var(--hsl-charcoal-lum);
+	--hsl-secondary-huesat: var(--hsl-sandy-brown-huesat);
+	--hsl-secondary-lum: var(--hsl-sandy-brown-lum);
+	--hsl-tertiary-huesat: var(--hsl-burnt-sienna-huesat);
+	--hsl-tertiary-lum: var(--hsl-burnt-sienna-lum);
+	--hsl-info-huesat: var(--hsl-charcoal-huesat);
+	--hsl-info-lum: calc(var(--hsl-charcoal-lum) + 10%);
+	--hsl-success-huesat: var(--hsl-persian-green-huesat);
+	--hsl-success-lum: var(--hsl-persian-green-lum);
+	--hsl-warning-huesat: var(--hsl-saffron-huesat);
+	--hsl-warning-lum: var(--hsl-saffron-lum);
+	--hsl-danger-huesat: var(--hsl-red-pantone-huesat);
+	--hsl-danger-lum: var(--hsl-red-pantone-lum);
 
 	--clr-primary: hsl(var(--hsl-primary-huesat) var(--hsl-primary-lum));
 	--clr-secondary: hsl(var(--hsl-secondary-huesat) var(--hsl-secondary-lum));
@@ -98,16 +90,17 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 	--clr-warning: hsl(var(--hsl-warning-huesat) var(--hsl-warning-lum));
 	--clr-danger: hsl(var(--hsl-danger-huesat) var(--hsl-danger-lum));
 	
-	--hsl-emphasis-huesat: var(--hsl-white-huesat);
-	--hsl-emphasis-lum: var(--hsl-white-lum);
-	--hsl-body-color-huesat: var(--hsl-light-huesat);
-	--hsl-body-color-lum: var(--hsl-light-lum);
-	--hsl-body-bg-huesat: var(--hsl-dark-huesat);
-	--hsl-body-bg-lum: var(--hsl-dark-lum);
-	--hsl-box-shadow-huesat: var(--hsl-seasalt-huesat);
-	--hsl-box-shadow-lum: var(--hsl-seasalt-lum);
-	--hsl-box-shadow-emphasis-huesat: var(--hsl-white-huesat);
-	--hsl-box-shadow-emphasis-lum: var(--hsl-white-lum);
+	--hsl-body-color-huesat: var(--hsl-dark-huesat);
+	--hsl-body-color-lum: var(--hsl-dark-lum);
+	--hsl-body-bg-huesat: var(--hsl-light-huesat);
+	--hsl-body-bg-lum: var(--hsl-light-lum);
+
+	--hsl-emphasis-huesat: var(--hsl-black-huesat);
+	--hsl-emphasis-lum: var(--hsl-black-lum);
+	--hsl-box-shadow-huesat: var(--hsl-rich-black-huesat);
+	--hsl-box-shadow-lum: var(--hsl-rich-black-lum);
+	--hsl-box-shadow-emphasis-huesat: var(--hsl-black-huesat);
+	--hsl-box-shadow-emphasis-lum: var(--hsl-black-lum);
 
 	--clr-emphasis: hsl(var(--hsl-emphasis-huesat) var(--hsl-emphasis-lum));
 	--clr-body-color: hsl(var(--hsl-body-color-huesat) var(--hsl-body-color-lum));
@@ -206,7 +199,6 @@ article {
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
-	border: solid 1px red;
 }
 
 strong {

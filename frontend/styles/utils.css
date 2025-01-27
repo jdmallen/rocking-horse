@@ -29,6 +29,36 @@
 	transition: transform 0.05s ease, box-shadow 0.1s ease;
 }
 
+.btn.btn-primary {
+	background-color: var(--clr-primary);
+}
+
+.btn.btn-secondary {
+	background-color: var(--clr-secondary);
+	color: var(--clr-dark);
+}
+
+.btn.btn-tertiary {
+	background-color: var(--clr-tertiary);
+}
+
+.btn.btn-info {
+	background-color: var(--clr-info);
+}
+
+.btn.btn-success {
+	background-color: var(--clr-success);
+}
+
+.btn.btn-warning {
+	background-color: var(--clr-warning);
+	color: var(--clr-dark);
+}
+
+.btn.btn-danger {
+	background-color: var(--clr-danger);
+}
+
 .btn:hover {
 	box-shadow: 0 0 0.5em 0.1em var(--clr-box-shadow-emphasis);
 }
@@ -46,17 +76,25 @@
 	height: 20px; /* Using px here only because of iconfiy SVG icons already being 20px */
 }
 
-.container {
+.container,
+.container-col {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 	display: flex;
+}
+
+.container {
 	justify-content: center;
 }
 
-.section {
+.container-col {
+	flex-direction: column;
+}
+
+.section:not(:nth-of-type(1)) {
 	margin-top: 5rem;
 }
 
@@ -96,21 +134,21 @@
 		max-width: 1024px;
 	}
 
-	.section {
+	.section:not(:nth-of-type(1)) {
 		margin-top: 10rem;
 	}
 }
 
 /* xl */
 @media screen and (width >=1280px) {
-	.container {
+	/* .container {
 		max-width: 1280px;
-	}
+	} */
 }
 
 /* 2xl */
 @media screen and (width >=1536px) {
-	.container {
+	/* .container {
 		max-width: 1536px;
-	}
+	} */
 }

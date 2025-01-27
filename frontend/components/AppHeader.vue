@@ -151,6 +151,14 @@
 		width: var(--size-2xl);
 		height: var(--size-2xl);
 		display: block;
+
+		@media (prefers-color-scheme: light) {
+			color: var(--clr-dark);
+		}
+
+		@media (prefers-color-scheme: dark) {
+			color: var(--clr-light);
+		}
 	}
 
 	/* md */

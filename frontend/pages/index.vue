@@ -1,6 +1,6 @@
 <template>
-	<div class="container">
-		<article>
+	<div class="container-col">
+		<article class="section">
 			<h1>Home Page</h1>
 			<p>
 				<a>Lorem ipsum dolor sit amet,</a> ipsum ut deserunt qui Lorem dolor
@@ -14,6 +14,15 @@
 				aute adipisicing nulla. Conse ctetur amet mollit adipisicing sunt aliqua
 				ea.
 			</p>
+		</article>
+		<article class="section">
+			<button class="btn btn-primary">Primary</button>
+			<button class="btn btn-secondary">Secondary</button>
+			<button class="btn btn-tertiary">Tertiary</button>
+			<button class="btn btn-info">Info</button>
+			<button class="btn btn-success">Success</button>
+			<button class="btn btn-warning">Warning</button>
+			<button class="btn btn-danger">Danger</button>
 		</article>
 	</div>
 </template>
