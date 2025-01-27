@@ -85,8 +85,12 @@
 		gap: var(--size-2xl);
 		padding-top: var(--size-4xl);
 		padding-bottom: var(--size-2xl);
+		width: 100%;
+		max-width: 80ch;
 
 		.footer__section {
+			margin-bottom: var(--size-lg);
+
 			h5.footer__section-header {
 				text-align: center;
 				font-size: var(--size-base);
@@ -109,6 +113,7 @@
 				}
 
 				input[type="email"] {
+					max-width: 30ch;
 					width: 100%;
 					border-top-left-radius: 0.25em;
 					border-bottom-left-radius: 0.25em;
@@ -150,10 +155,10 @@
 		}
 	}
 
-	@media screen and (width >= 475px) {
+	@media screen and (width >= 768px) {
 		.footer {
 			flex-direction: row;
-			justify-content: flex-end;
+			justify-content: space-between;
 			align-items: flex-start;
 
 			.footer__section {
@@ -170,7 +175,7 @@
 				}
 			}
 
-			.footer__section:nth-of-type(2) ul {
+			.footer__section:nth-of-type(3) ul {
 				justify-content: flex-start;
 				margin-right: 4rem;
 			}
