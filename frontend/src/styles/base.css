@@ -1,0 +1,92 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.5;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: var(--color-background-dark);
+  color: var(--color-text-dark);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: var(--font-size-xxl); }
+h2 { font-size: var(--font-size-xl); }
+h3 { font-size: var(--font-size-lg); }
+h4 { font-size: var(--font-size-md); }
+h5 { font-size: var(--font-size-sm); }
+h6 { font-size: var(--font-size-xs); }
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Links */
+a {
+  color: var(--color-maroon);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-maroon-light);
+}
+
+/* Dark Mode Links */
+body.dark-mode a {
+  color: var(--color-maroon-light);
+}
+
+body.dark-mode a:hover {
+  color: var(--color-maroon);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Responsive Utilities */
+@media (min-width: 576px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+.mt-5 { margin-top: var(--spacing-xl); } 
