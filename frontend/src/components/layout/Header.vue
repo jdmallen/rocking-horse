@@ -6,18 +6,18 @@
           <img src="@/assets/images/logo-placeholder.png" alt="Rocking Horse Productions Logo" class="logo">
         </div>
         <nav class="nav">
-          <button class="nav__toggle" @click="toggleMobileMenu" aria-label="Toggle navigation menu">
+          <button class="nav__toggle" aria-label="Toggle navigation menu" @click="toggleMobileMenu">
             <span class="nav__toggle-icon"></span>
           </button>
           <ul class="nav__list" :class="{ 'nav__list--active': isMobileMenuOpen }">
-            <li class="nav__item" v-for="item in navItems" :key="item.path">
-              <router-link :to="item.path" class="nav__link" @click="closeMobileMenu">
+            <li v-for="item in navItems" :key="item.path" class="nav__item">
+              <router-link :to="item.path" class="link link-primary" @click="closeMobileMenu">
                 {{ item.label }}
               </router-link>
             </li>
           </ul>
         </nav>
-        <button class="theme-toggle" @click="toggleTheme" aria-label="Toggle theme">
+        <button class="theme-toggle" aria-label="Toggle theme" @click="toggleTheme">
           <span class="theme-toggle__icon">{{ isDarkMode ? '🌞' : '🌙' }}</span>
         </button>
       </div>

@@ -5,7 +5,7 @@
       <div class="hero__content">
         <h1 class="hero__title">Current Season 2024-2025</h1>
         <p class="hero__subtitle">Experience the magic of community theatre</p>
-        <router-link to="/tickets" class="hero__cta">Get Tickets</router-link>
+        <router-link to="/tickets" class="btn btn-primary hero__cta">Get Tickets</router-link>
       </div>
     </section>
 
@@ -22,7 +22,9 @@
               <h3 class="news-card__title">{{ item.title }}</h3>
               <p class="news-card__date">{{ item.date }}</p>
               <p class="news-card__excerpt">{{ item.excerpt }}</p>
-              <router-link :to="item.link" class="news-card__link">Read More</router-link>
+              <router-link :to="item.link" class="link link-primary">Read More</router-link><br>
+              <router-link :to="item.link" class="link link-secondary news-card__link">Read More</router-link><br>
+              <router-link :to="item.link" class="link link-tertiary news-card__link">Read More</router-link>
             </div>
           </article>
         </div>
@@ -110,7 +112,7 @@ const newsItems = ref([
 }
 
 .hero__title {
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-2xl);
   margin-bottom: var(--spacing-md);
 }
 
@@ -120,14 +122,7 @@ const newsItems = ref([
 }
 
 .hero__cta {
-  display: inline-block;
   padding: var(--spacing-md) var(--spacing-xl);
-  background-color: var(--color-maroon);
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
 }
 
 .hero__cta:hover {
@@ -203,18 +198,11 @@ body.dark-mode .news-card__excerpt {
 }
 
 .news-card__link {
-  color: var(--color-maroon);
-  text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 body.dark-mode .news-card__link {
   color: var(--color-maroon-light);
-}
-
-.news-card__link:hover {
-  color: var(--color-maroon-dark);
 }
 
 body.dark-mode .news-card__link:hover {

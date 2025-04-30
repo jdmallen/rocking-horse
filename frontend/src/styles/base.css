@@ -1,18 +1,15 @@
 /* Reset and Base Styles */
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  line-height: calc(1em + 0.5rem);
 }
 
 html {
-  font-size: 16px;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-family);
-  line-height: 1.5;
+  font-family: var(--font-family-body);
   background-color: var(--color-background);
   color: var(--color-text);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -24,14 +21,23 @@ body.dark-mode {
   color: var(--color-text-dark);
 }
 
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.2;
+  font-family: var(--font-family-heading);
   margin-bottom: var(--spacing-md);
 }
 
-h1 { font-size: var(--font-size-xxl); }
+h1 { font-size: var(--font-size-2xl); }
 h2 { font-size: var(--font-size-xl); }
 h3 { font-size: var(--font-size-lg); }
 h4 { font-size: var(--font-size-md); }
@@ -44,13 +50,39 @@ p {
 
 /* Links */
 a {
-  color: var(--color-maroon);
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 a:hover {
   color: var(--color-maroon-light);
+}
+
+.link {
+  transition: color 0.3s ease;
+
+  &.link-primary {
+    color: var(--color-maroon);
+
+    &:hover {
+      color: var(--color-maroon-light);
+    }
+  }
+
+  &.link-secondary {
+    color: var(--color-gunmetal);
+
+    &:hover {
+      color: var(--color-gunmetal-light);
+    }
+  }
+
+  &.link-tertiary {
+    color: var(--color-text);
+
+    &:hover {
+      color: var(--color-text-secondary);
+    }
+  }
 }
 
 /* Dark Mode Links */
@@ -68,6 +100,59 @@ body.dark-mode a:hover {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+}
+
+/* Buttons */
+button {
+  display: inline-block;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  letter-spacing: -0.05em;
+  border-radius: var(--xxs);
+  font-weight: 600;
+  box-shadow: var(--xxs)  var(--xxs) var(--xs) var(--color-background-dark);
+  transition: background-color 0.3s ease;
+
+  &:active {
+    box-shadow: none;
+    transform: translate(var(--xxs), var(--xxs));
+  }
+
+  &.btn-primary {
+    background-color: var(--color-maroon);
+    color: var(--color-background);
+
+    &:hover {
+      background-color: var(--color-maroon-light);
+    }
+  }
+
+  &.btn-secondary {
+    background-color: var(--color-secondary-background);
+    color: var(--color-maroon);
+
+    &:hover {
+      background-color: var(--color-background);
+    }
+  }
+
+  &.btn-tertiary {
+    background-color: var(--color-secondary-background);
+    color: var(--color-gunmetal);
+
+    &:hover {
+      background-color: var(--color-background);
+    }
+  }
 }
 
 /* Responsive Utilities */

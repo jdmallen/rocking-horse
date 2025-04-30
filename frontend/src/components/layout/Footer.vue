@@ -7,8 +7,8 @@
           <form class="newsletter-form" @submit.prevent="handleNewsletterSubmit">
             <div class="newsletter-form__group">
               <input
-                type="email"
                 v-model="email"
+                type="email"
                 placeholder="Enter your email"
                 class="newsletter-form__input"
                 required
@@ -21,16 +21,16 @@
         <div class="footer__section">
           <h3 class="footer__title">Follow Us</h3>
           <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook">
+            <a href="#" class="link link-secondary" aria-label="Facebook">
               <span class="social-icon">📘</span>
             </a>
-            <a href="#" class="social-link" aria-label="Twitter">
+            <a href="#" class="link link-secondary" aria-label="Twitter">
               <span class="social-icon">🐦</span>
             </a>
-            <a href="#" class="social-link" aria-label="Instagram">
+            <a href="#" class="link link-secondary" aria-label="Instagram">
               <span class="social-icon">📸</span>
             </a>
-            <a href="#" class="social-link" aria-label="YouTube">
+            <a href="#" class="link link-secondary" aria-label="YouTube">
               <span class="social-icon">▶️</span>
             </a>
           </div>
@@ -42,7 +42,7 @@
             Rocking Horse Productions<br>
             123 Theatre Street<br>
             City, State 12345<br>
-            <a href="mailto:info@rockinghorseproductions.com">info@rockinghorseproductions.com</a>
+            <a href="mailto:info@rockinghorseproductions.com" class="link link-tertiary">info@rockinghorseproductions.com</a>
           </p>
         </div>
       </div>

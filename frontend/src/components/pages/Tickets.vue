@@ -4,7 +4,7 @@
       <h1 class="section-title">Get Your Tickets</h1>
 
       <!-- Current Show -->
-      <section class="current-show" v-if="currentShow">
+      <section v-if="currentShow" class="current-show">
         <div class="show-banner">
           <img :src="currentShow.image" :alt="currentShow.title">
           <div class="show-banner__overlay">
@@ -50,22 +50,22 @@
                 <div class="quantity-control">
                   <button 
                     class="quantity-button"
-                    @click="decreaseQuantity(option)"
                     :disabled="option.quantity <= 0"
+                    @click="decreaseQuantity(option)"
                   >
                     -
                   </button>
                   <input 
                     :id="'quantity-' + option.type"
-                    type="number"
                     v-model="option.quantity"
+                    type="number"
                     min="0"
                     max="10"
                   >
                   <button 
                     class="quantity-button"
-                    @click="increaseQuantity(option)"
                     :disabled="option.quantity >= 10"
+                    @click="increaseQuantity(option)"
                   >
                     +
                   </button>
@@ -76,10 +76,10 @@
         </div>
 
         <!-- Order Summary -->
-        <div class="order-summary" v-if="hasTickets">
+        <div v-if="hasTickets" class="order-summary">
           <h3>Order Summary</h3>
           <div class="summary-items">
-            <div v-for="option in ticketOptions" :key="option.type" class="summary-item" v-if="option.quantity > 0">
+            <div v-for="option in ticketOptions" v-if="option.quantity > 0" :key="option.type" class="summary-item">
               <span>{{ option.type }} ({{ option.quantity }})</span>
               <span>${{ (option.price * option.quantity).toFixed(2) }}</span>
             </div>
@@ -231,7 +231,7 @@ const proceedToCheckout = () => {
 }
 
 .show-banner__title {
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-2xl);
   margin-bottom: var(--spacing-sm);
 }
 

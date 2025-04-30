@@ -15,7 +15,7 @@
               <h3 class="sponsor-card__name">{{ sponsor.name }}</h3>
               <p class="sponsor-card__level">{{ sponsor.level }}</p>
               <p class="sponsor-card__description">{{ sponsor.description }}</p>
-              <a :href="sponsor.website" class="sponsor-card__link" target="_blank" rel="noopener">
+              <a :href="sponsor.website" class="link link-secondary" target="_blank" rel="noopener">
                 Visit Website
               </a>
             </div>
@@ -32,12 +32,12 @@
           <h3 class="member-level">Benefactors</h3>
           <div class="member-grid">
             <div v-for="member in getBenefactors" :key="member.id" class="member-card">
-              <div class="member-card__image" v-if="member.image">
+              <div v-if="member.image" class="member-card__image">
                 <img :src="member.image" :alt="member.name">
               </div>
               <div class="member-card__content">
                 <h4 class="member-card__name">{{ member.name }}</h4>
-                <p class="member-card__since" v-if="member.memberSince">
+                <p v-if="member.memberSince" class="member-card__since">
                   Member since {{ member.memberSince }}
                 </p>
               </div>
@@ -52,7 +52,7 @@
             <div v-for="member in getPatrons" :key="member.id" class="member-card">
               <div class="member-card__content">
                 <h4 class="member-card__name">{{ member.name }}</h4>
-                <p class="member-card__since" v-if="member.memberSince">
+                <p v-if="member.memberSince" class="member-card__since">
                   Member since {{ member.memberSince }}
                 </p>
               </div>
@@ -78,7 +78,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { apiService, type Member } from '@/services/api'
+import { /*apiService, */type Member } from '@/services/api'
 
 interface CorporateSponsor {
   id: number

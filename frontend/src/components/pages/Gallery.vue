@@ -64,16 +64,16 @@
                 :alt="selectedProduction.title"
               >
               <button 
-                class="gallery-modal__nav gallery-modal__nav--prev" 
+                v-if="currentImageIndex > 0" 
+                class="gallery-modal__nav gallery-modal__nav--prev"
                 @click="previousImage"
-                v-if="currentImageIndex > 0"
               >
                 ‹
               </button>
               <button 
-                class="gallery-modal__nav gallery-modal__nav--next" 
+                v-if="currentImageIndex < selectedProduction.images.length - 1" 
+                class="gallery-modal__nav gallery-modal__nav--next"
                 @click="nextImage"
-                v-if="currentImageIndex < selectedProduction.images.length - 1"
               >
                 ›
               </button>
@@ -112,7 +112,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { apiService, type GalleryItem } from '@/services/api'
+import { /*apiService, */type GalleryItem } from '@/services/api'
 
 const productions = ref<GalleryItem[]>([])
 const selectedSeason = ref('')
@@ -368,7 +368,7 @@ body.dark-mode .gallery-modal__title {
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-2xl);
   padding: var(--spacing-sm) var(--spacing-md);
   cursor: pointer;
   transition: background-color 0.3s ease;
