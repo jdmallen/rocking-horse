@@ -1,31 +1,16 @@
 services:
-#  front:
-#    build: ./frontend
-#    ports:
-#      - "80:8000"
-#    restart: unless-stopped
-#    depends_on:
-#      back:
-#        condition: service_healthy
-#    command: ["npm", "run start"]
-#    networks:
-#      - rhp
-
   back:
     image: directus/directus:11
     container_name: "rocking_horse_directus"
-#    depends_on:
-#      db:
-#        condition: service_healthy
+    depends_on:
+      db:
+        condition: service_healthy
     ports:
       - 8055:8055
     volumes:
-      - ./backend/database:/directus/database
       - ./backend/uploads:/directus/uploads
       - ./backend/extensions:/directus/extensions
     env_file: .env
-#    environment:
-#      - DATABASE_HOST=db
     networks:
       - rhp
     restart: unless-stopped
@@ -33,28 +18,20 @@ services:
   db:
     image: postgres:16
     platform: linux/amd64
-    container_name: "rocking_horse_strapi_db"
-    user: root
+    container_name: "rocking_horse_postgres"
     ports:
       - 5432:5432
     volumes:
       - ./db/data:/var/lib/postgresql/data
-      - ./db/config:/etc/postgresql
     env_file: .env
     networks:
       - rhp
     restart: unless-stopped
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -d ${POSTGRES_DB} -U ${POSTGRES_USER}" ]
-      interval: 1s
+      interval: 5s
       timeout: 5s
-      retries: 10
-
-#volumes:
-#  rocking_horse_pgdata:
-#    external: true
-#  rocking_horse_pgconfig:
-#    external: true
+      retries: 5
 
 networks:
   rhp:
