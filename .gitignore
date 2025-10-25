@@ -7,3 +7,5 @@ db
 **/.env*
 .stylelintcache
 .cache*
+*prompt*.txt
+
