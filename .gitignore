@@ -8,4 +8,5 @@ db
 .stylelintcache
 .cache*
 *prompt*.txt
-
+# Ignore files starting with something that looks like a UUID
+[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]-*
