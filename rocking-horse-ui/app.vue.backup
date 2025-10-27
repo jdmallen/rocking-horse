@@ -1,0 +1,8 @@
+<template>
+  <div>
+    <NuxtRouteAnnouncer />
+    <h1>App.vue is rendering</h1>
+    <router-view />
+    <p>After router-view</p>
+  </div>
+</template>
