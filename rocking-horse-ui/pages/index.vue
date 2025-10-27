@@ -7,14 +7,14 @@
 </template>
 
 <script setup>
-const nuxtApp = useNuxtApp()
-const pluginLoaded = computed(() => !!(nuxtApp.$directus))
+const nuxtApp = useNuxtApp();
+const pluginLoaded = computed(() => !!(nuxtApp.$directus));
 
 const isDirectusAvailable = computed(() => {
 	return !!(
 		nuxtApp.$directus &&
 		typeof nuxtApp.$readItem === 'function' &&
 		typeof nuxtApp.$readItems === 'function'
-	)
-})
+	);
+});
 </script>

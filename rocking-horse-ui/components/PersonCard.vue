@@ -1,0 +1,229 @@
+<template>
+	<!-- List Form -->
+	<div 
+		v-if="display === 'list'" 
+		class="person-list-item"
+		@click="$emit('open-modal')"
+	>
+		{{ displayName }}
+	</div>
+
+	<!-- Card Form -->
+	<div 
+		v-else-if="display === 'card'" 
+		class="person-card"
+		@click="$emit('open-modal')"
+	>
+		<div class="person-card-image">
+			<img 
+				v-if="person.headshot" 
+				:src="headshotUrl" 
+				:alt="displayName"
+				class="headshot"
+			>
+			<div v-else class="headshot-placeholder">
+				<span>No Photo</span>
+			</div>
+			<div class="person-card-name">
+				{{ displayName }}
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Form -->
+	<div v-else-if="display === 'modal'" class="person-modal">
+		<div class="person-modal-content">
+			<div class="person-modal-image">
+				<img 
+					v-if="person.headshot" 
+					:src="headshotUrl" 
+					:alt="displayName"
+					class="modal-headshot"
+				>
+				<div v-else class="modal-headshot-placeholder">
+					<span>No Photo</span>
+				</div>
+			</div>
+			<div class="person-modal-details">
+				<div v-for="field in visibleFields" :key="field.key" class="detail-row">
+					<span class="detail-label">{{ field.label }}:</span>
+					<span class="detail-value">{{ field.value }}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script setup>
+const props = defineProps({
+	person: {
+		type: Object,
+		required: true,
+	},
+	display: {
+		type: String,
+		default: 'list',
+		validator: (value) => ['list', 'card', 'modal'].includes(value),
+	},
+});
+
+defineEmits(['open-modal']);
+
+const displayName = computed(() => {
+	return props.person.preferred_display_name || `${props.person.first_name} ${props.person.last_name}`;
+});
+
+const headshotUrl = computed(() => {
+	if (!props.person.headshot) return null;
+	return `http://localhost:8055/assets/${props.person.headshot}`;
+});
+
+const visibleFields = computed(() => {
+	const excludedFields = ['id', 'sort', 'user_created', 'date_created', 'user_updated', 'date_updated', 'is_hidden', 'headshot'];
+	const fieldLabels = {
+		first_name: 'First Name',
+		last_name: 'Last Name', 
+		middle_name: 'Middle Name',
+		preferred_display_name: 'Preferred Name',
+		email: 'Email',
+		phone_number: 'Phone',
+		bio: 'Bio',
+		year_joined: 'Year Joined',
+	};
+
+	const fields = [];
+	
+	// Add name field first
+	fields.push({
+		key: 'name',
+		label: 'Name',
+		value: displayName.value,
+	});
+
+	// Add other fields
+	Object.keys(props.person).forEach(key => {
+		if (!excludedFields.includes(key) && props.person[key] && key !== 'preferred_display_name' && key !== 'first_name' && key !== 'last_name') {
+			fields.push({
+				key,
+				label: fieldLabels[key] || key,
+				value: props.person[key],
+			});
+		}
+	});
+
+	return fields;
+});
+</script>
+
+<style scoped>
+	.person-list-item {
+	padding: 0.5rem;
+	border-bottom: 1px solid #e5e7eb;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.person-list-item:hover {
+	background-color: #f9fafb;
+}
+
+.person-card {
+	position: relative;
+	width: 100%;
+	max-width: min(300px, 100vw);
+	aspect-ratio: 1;
+	cursor: pointer;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%);
+	transition: transform 0.2s;
+}
+
+.person-card:hover {
+	transform: scale(1.02);
+}
+
+.person-card-image {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.headshot, .headshot-placeholder {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.headshot-placeholder {
+	background: #f3f4f6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #6b7280;
+}
+
+.person-card-name {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgb(255 255 255 / 90%);
+	padding: 0.75rem;
+	text-align: center;
+	font-weight: 600;
+	backdrop-filter: blur(4px);
+}
+
+.person-modal-content {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 2rem;
+	max-width: 800px;
+	width: 100%;
+}
+
+.modal-headshot, .modal-headshot-placeholder {
+	width: 100%;
+	aspect-ratio: 1;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.modal-headshot-placeholder {
+	background: #f3f4f6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #6b7280;
+}
+
+.person-modal-details {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.detail-row {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.detail-label {
+	font-weight: 600;
+	color: #374151;
+	font-size: 0.875rem;
+}
+
+.detail-value {
+	color: #1f2937;
+}
+
+@media (width <= 768px) {
+	.person-modal-content {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+}
+</style>

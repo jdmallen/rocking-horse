@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint . && stylelint \"**/*.{css,vue}\"",
+    "lint:fix": "eslint . --fix && stylelint \"**/*.{css,vue}\" --fix"
   },
   "dependencies": {
     "@directus/sdk": "^20.1.0",
@@ -23,5 +25,12 @@
     "vue": "^3.5.22",
     "vue-router": "^4.5.1"
   },
-  "packageManager": "pnpm@10.18.3+sha512.bbd16e6d7286fd7e01f6b3c0b3c932cda2965c06a908328f74663f10a9aea51f1129eea615134bf992831b009eabe167ecb7008b597f40ff9bc75946aadfb08d"
+  "packageManager": "pnpm@10.18.3+sha512.bbd16e6d7286fd7e01f6b3c0b3c932cda2965c06a908328f74663f10a9aea51f1129eea615134bf992831b009eabe167ecb7008b597f40ff9bc75946aadfb08d",
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^5.5.0",
+    "postcss-html": "^1.8.0",
+    "stylelint": "^16.25.0",
+    "stylelint-config-recommended-vue": "^1.6.1",
+    "stylelint-config-standard": "^39.0.1"
+  }
 }
