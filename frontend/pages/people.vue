@@ -1,34 +1,34 @@
 <template>
 	<div>
 		<h1>People Collection</h1>
-		
+
 		<div v-if="pending">
 			<p>Loading...</p>
 		</div>
-		
+
 		<div v-else-if="error">
 			<p>Error loading people: {{ error.message }}</p>
 		</div>
-		
+
 		<div v-else>
 			<p>Found {{ data?.length || 0 }} people</p>
-			
+
 			<div v-if="data && data.length > 0">
 				<h2>People Cards</h2>
 				<div class="people-grid">
-					<PersonCard 
-						v-for="person in data" 
+					<PersonCard
+						v-for="person in data"
 						:key="person.id"
 						:person="person"
 						display="card"
 						@open-modal="openModal(person)"
 					/>
 				</div>
-				
+
 				<h2>People List</h2>
 				<div class="people-list">
-					<PersonCard 
-						v-for="person in data" 
+					<PersonCard
+						v-for="person in data"
 						:key="person.id"
 						:person="person"
 						display="list"
@@ -36,7 +36,7 @@
 					/>
 				</div>
 			</div>
-			
+
 			<div v-else>
 				<p>No people found in the collection.</p>
 			</div>
@@ -46,7 +46,7 @@
 		<div v-if="selectedPerson" class="modal-overlay" @click="closeModal">
 			<div class="modal-content" @click.stop>
 				<button class="modal-close" @click="closeModal">&times;</button>
-				<PersonCard 
+				<PersonCard
 					:person="selectedPerson"
 					display="modal"
 				/>

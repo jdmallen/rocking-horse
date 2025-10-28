@@ -10,5 +10,11 @@ export default defineNuxtConfig({
 		'@nuxt/scripts',
 		'@nuxt/ui',
 		'@nuxt/test-utils',
-	]
+	],
+
+	runtimeConfig: {
+		public: {
+			directusUrl: process.env.NUXT_DIRECTUS_URL || 'http://localhost:8055',
+		},
+	},
 });

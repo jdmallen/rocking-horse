@@ -1,9 +1,11 @@
 {
 	"extends": ["stylelint-config-standard", "stylelint-config-recommended-vue"],
+	"plugins": ["@stylistic/stylelint-plugin"],
 	"rules": {
 		"selector-class-pattern": null,
 		"custom-property-pattern": null,
 		"keyframes-name-pattern": null,
+		"@stylistic/no-eol-whitespace": true,
 		"at-rule-no-unknown": [
 			true,
 			{

@@ -1,10 +1,10 @@
 export async function getPeople() {
 	const { $directus, $readItems } = useNuxtApp();
-	
+
 	try {
 		console.log('Making request to Directus...');
 		console.log('Directus URL:', $directus.url);
-		
+
 		const people = await $directus.request($readItems('people'));
 		console.log('Response received:', people);
 		return people;
@@ -17,7 +17,7 @@ export async function getPeople() {
 
 export async function getPerson(id) {
 	const { $directus, $readItem } = useNuxtApp();
-	
+
 	try {
 		const person = await $directus.request($readItem('people', id));
 		return person;
@@ -29,7 +29,7 @@ export async function getPerson(id) {
 
 export async function getPhoto(id) {
 	const { $directus, $readItem } = useNuxtApp();
-	
+
 	try {
 		const photo = await $directus.request($readItem('photos', id));
 		return photo;
@@ -41,5 +41,12 @@ export async function getPhoto(id) {
 
 export function getAssetUrl(assetId) {
 	if (!assetId) return null;
-	return `${process.env.NUXT_DIRECTUS_URL || 'http://localhost:8055'}/assets/${assetId}`;
+	let baseUrl;
+	if (import.meta.client) {
+		baseUrl = 'http://localhost:8055';
+	} else {
+		const { $directus } = useNuxtApp();
+		baseUrl = $directus.url;
+	}
+	return `${baseUrl}/assets/${assetId}`;
 }

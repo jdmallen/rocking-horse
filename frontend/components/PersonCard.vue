@@ -1,7 +1,7 @@
 <template>
 	<!-- List Form -->
-	<div 
-		v-if="display === 'list'" 
+	<div
+		v-if="display === 'list'"
 		class="person-list-item"
 		@click="$emit('open-modal')"
 	>
@@ -9,21 +9,25 @@
 	</div>
 
 	<!-- Card Form -->
-	<div 
-		v-else-if="display === 'card'" 
+	<div
+		v-else-if="display === 'card'"
 		class="person-card"
 		@click="$emit('open-modal')"
 	>
 		<div class="person-card-image">
-			<img 
-				v-if="person.headshot" 
-				:src="headshotUrl" 
-				:alt="displayName"
-				class="headshot"
-			>
-			<div v-else class="headshot-placeholder">
-				<span>No Photo</span>
-			</div>
+			<ClientOnly>
+				<img
+					v-if="person.headshot"
+					:src="headshotUrl"
+					:alt="displayName"
+					class="headshot"
+					@error="console.log('Image failed to load:', headshotUrl)"
+					@load="console.log('Image loaded successfully:', headshotUrl)"
+				>
+				<div v-else class="headshot-placeholder">
+					<span>No Photo</span>
+				</div>
+			</ClientOnly>
 			<div class="person-card-name">
 				{{ displayName }}
 			</div>
@@ -34,11 +38,13 @@
 	<div v-else-if="display === 'modal'" class="person-modal">
 		<div class="person-modal-content">
 			<div class="person-modal-image">
-				<img 
-					v-if="person.headshot" 
-					:src="headshotUrl" 
+				<img
+					v-if="person.headshot"
+					:src="headshotUrl"
 					:alt="displayName"
 					class="modal-headshot"
+					@error="console.log('Modal image failed to load:', headshotUrl)"
+					@load="console.log('Modal image loaded successfully:', headshotUrl)"
 				>
 				<div v-else class="modal-headshot-placeholder">
 					<span>No Photo</span>
@@ -83,7 +89,7 @@ const visibleFields = computed(() => {
 	const excludedFields = ['id', 'sort', 'user_created', 'date_created', 'user_updated', 'date_updated', 'is_hidden', 'headshot'];
 	const fieldLabels = {
 		first_name: 'First Name',
-		last_name: 'Last Name', 
+		last_name: 'Last Name',
 		middle_name: 'Middle Name',
 		preferred_display_name: 'Preferred Name',
 		email: 'Email',
@@ -93,7 +99,7 @@ const visibleFields = computed(() => {
 	};
 
 	const fields = [];
-	
+
 	// Add name field first
 	fields.push({
 		key: 'name',

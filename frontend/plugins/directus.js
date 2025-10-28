@@ -1,8 +1,9 @@
 import { createDirectus, rest, readItem, readItems } from '@directus/sdk';
 
-const directus = createDirectus(process.env.NUXT_DIRECTUS_URL || 'http://localhost:8055').with(rest());
-
 export default defineNuxtPlugin(() => {
+	const config = useRuntimeConfig();
+	const directus = createDirectus(config.public.directusUrl).with(rest());
+
 	return {
 		provide: { directus, readItem, readItems },
 	};

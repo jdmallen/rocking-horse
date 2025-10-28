@@ -11,5 +11,6 @@ export default withNuxt({
 		'@stylistic/no-mixed-spaces-and-tabs': 'error',
 		'@stylistic/semi': ['error', 'always'],
 		'@stylistic/comma-dangle': ['error', 'always-multiline'],
+		'@stylistic/no-trailing-spaces': 'error',
 	},
 });
