@@ -55,6 +55,8 @@
 </template>
 
 <script setup>
+import { getAssetUrl } from '~/services/directus';
+
 const props = defineProps({
 	person: {
 		type: Object,
@@ -74,8 +76,7 @@ const displayName = computed(() => {
 });
 
 const headshotUrl = computed(() => {
-	if (!props.person.headshot) return null;
-	return `http://localhost:8055/assets/${props.person.headshot}`;
+	return getAssetUrl(props.person.headshot);
 });
 
 const visibleFields = computed(() => {

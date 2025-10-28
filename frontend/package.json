@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host 0.0.0.0",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "preview": "nuxt preview --host 0.0.0.0",
+    "start": "node .output/server/index.mjs",
     "postinstall": "nuxt prepare",
     "lint": "eslint . && stylelint \"**/*.{css,vue}\"",
     "lint:fix": "eslint . --fix && stylelint \"**/*.{css,vue}\" --fix"

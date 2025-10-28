@@ -38,3 +38,8 @@ export async function getPhoto(id) {
 		throw error;
 	}
 }
+
+export function getAssetUrl(assetId) {
+	if (!assetId) return null;
+	return `${process.env.NUXT_DIRECTUS_URL || 'http://localhost:8055'}/assets/${assetId}`;
+}

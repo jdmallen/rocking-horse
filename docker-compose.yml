@@ -15,6 +15,26 @@ services:
       - rhp
     restart: unless-stopped
 
+  front:
+    image: node:20-alpine
+    container_name: "rocking_horse_frontend"
+    working_dir: /app
+    ports:
+      - ${FRONTEND_PORT:-3000}:3000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=${NODE_ENV:-development}
+      - NUXT_HOST=0.0.0.0
+      - NUXT_PORT=3000
+      - NUXT_DIRECTUS_URL=http://back:8055
+    env_file: .env
+    networks:
+      - rhp
+    restart: unless-stopped
+    command: sh -c "corepack enable && pnpm install && if [ \"$NODE_ENV\" = \"production\" ]; then pnpm run build && pnpm run preview; else pnpm run dev; fi"
+
   db:
     image: postgres:16
     platform: linux/amd64
