@@ -42,7 +42,8 @@
 					v-if="person.headshot"
 					:src="headshotUrl"
 					:alt="displayName"
-					class="modal-headshot"
+					class="modal-headshot clickable-image"
+					@click="showLargeImage = true"
 					@error="console.log('Modal image failed to load:', headshotUrl)"
 					@load="console.log('Modal image loaded successfully:', headshotUrl)"
 				>
@@ -56,6 +57,24 @@
 					<span class="detail-value">{{ field.value }}</span>
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<!-- Large Image Overlay -->
+	<div v-if="showLargeImage" class="image-overlay" @click="showLargeImage = false">
+		<div class="large-image-container" @click.stop>
+			<img
+				:src="headshotUrl"
+				:alt="displayName"
+				class="large-image"
+			>
+			<button
+				class="close-button"
+				@click="showLargeImage = false"
+				aria-label="Close large image"
+			>
+				×
+			</button>
 		</div>
 	</div>
 </template>
@@ -76,6 +95,8 @@ const props = defineProps({
 });
 
 defineEmits(['open-modal']);
+
+const showLargeImage = ref(false);
 
 const displayName = computed(() => {
 	return props.person.preferred_display_name || `${props.person.first_name} ${props.person.last_name}`;
@@ -225,6 +246,65 @@ const visibleFields = computed(() => {
 
 .detail-value {
 	color: #1f2937;
+}
+
+.clickable-image {
+	cursor: pointer;
+	transition: opacity 0.2s;
+}
+
+.clickable-image:hover {
+	opacity: 0.8;
+}
+
+.image-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+	cursor: pointer;
+}
+
+.large-image-container {
+	position: relative;
+	max-width: 90vw;
+	max-height: 90vh;
+	cursor: auto;
+}
+
+.large-image {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	border-radius: 8px;
+}
+
+.close-button {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	background: #fff;
+	border: none;
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.close-button:hover {
+	background: #f5f5f5;
 }
 
 @media (width <= 768px) {
