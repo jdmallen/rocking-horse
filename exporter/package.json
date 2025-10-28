@@ -1,0 +1,17 @@
+{
+  "name": "rh-exporter",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Theater database collection exporter for Directus",
+  "main": "export.js",
+  "scripts": {
+    "export": "node export.js",
+    "install-deps": "npm install"
+  },
+  "dependencies": {
+    "@directus/sdk": "^20.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

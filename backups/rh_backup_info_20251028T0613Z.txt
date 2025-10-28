@@ -1,0 +1,44 @@
+Theater Database Backup
+=======================
+Date: Tue Oct 28 2025 02:13:30 GMT-0400 (Eastern Daylight Time)
+Directus URL: http://localhost:8055
+Collections Exported: people, productions, shows, venues, performances, cast_crew, news, photos, sponsors, auditions, auditions_files, auditions_productions, news_productions, photos_people, photos_performances, photos_productions, photos_venues, sponsors_productions
+Total Items: 15
+
+Files Created:
+- rh_data_20251028T0613Z.json (collection data)
+- rh_schema_20251028T0613Z.yaml (database schema)
+- rh_backup_info_20251028T0613Z.txt (this file)
+
+To restore this backup:
+1. Import schema: sudo docker exec rocking_horse_directus npx directus schema apply /directus/backups/rh_schema_20251028T0613Z.yaml
+2. Import data: Use Directus Admin Panel to import rh_data_20251028T0613Z.json
+3. Or use the Directus API to restore individual collections
+
+Collections included:
+- people: 2 items
+- productions: 4 items
+- shows: 4 items
+- venues: 2 items
+- performances: 0 items
+- cast_crew: 0 items
+- news: 2 items
+- photos: 1 items
+- sponsors: 0 items
+- auditions: 0 items
+- auditions_files: 0 items
+- auditions_productions: 0 items
+- news_productions: 0 items
+- photos_people: 0 items
+- photos_performances: 0 items
+- photos_productions: 0 items
+- photos_venues: 0 items
+- sponsors_productions: 0 items
+
+Export command used:
+npm run export (from exporter directory)
+
+Environment:
+- DIRECTUS_URL: http://localhost:8055
+- CONTAINER_NAME: rocking_horse_directus
+- EXPORT_DIR: ../backups

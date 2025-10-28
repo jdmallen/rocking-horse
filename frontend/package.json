@@ -10,10 +10,12 @@
     "start": "node .output/server/index.mjs",
     "postinstall": "nuxt prepare",
     "lint": "eslint . && stylelint \"**/*.{css,vue}\"",
-    "lint:fix": "eslint . --fix && stylelint \"**/*.{css,vue}\" --fix"
+    "lint:fix": "eslint . --fix && stylelint \"**/*.{css,vue}\" --fix",
+    "generate-data": "node scripts/generate-data.js"
   },
   "dependencies": {
     "@directus/sdk": "^20.1.0",
+    "@faker-js/faker": "^10.1.0",
     "@nuxt/eslint": "1.9.0",
     "@nuxt/image": "1.11.0",
     "@nuxt/scripts": "0.13.0",

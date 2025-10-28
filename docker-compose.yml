@@ -10,6 +10,7 @@ services:
     volumes:
       - ./backend/uploads:/directus/uploads
       - ./backend/extensions:/directus/extensions
+      - ./backups:/directus/backups
     env_file: .env
     networks:
       - rhp

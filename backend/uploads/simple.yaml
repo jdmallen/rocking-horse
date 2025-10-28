@@ -1,0 +1,233 @@
+each collection has fields:
+  - sort (int)
+  - date_created (datetime)
+  - date_updated (datetime)
+  - user_created (string, foreign key to directus_users)
+  - user_updated (string, foreign key to directus_users)
+
+collections with remaining fields:
+  - auditions
+    - id (int)
+    - venue (int, foreign key to venues)
+    - productions (alias, many-to-many via auditions_productions)
+    - datetime_1 (datetime)
+    - datetime_2 (datetime)
+    - callbacks_datetime_1 (datetime)
+    - callbacks_datetime_2 (datetime)
+    - title (string)
+    - description (text)
+    - sides (alias, many-to-many via auditions_files)
+    - signup_url (string)
+  - auditions_files
+    - id (int)
+    - auditions_id (int, foreign key to auditions)
+    - directus_files_id (uuid, foreign key to directus_files)
+  - auditions_productions
+    - id (int)
+    - auditions_id (int, foreign key to auditions)
+    - productions_id (int, foreign key to productions)
+  - cast_crew
+    - id (uuid)
+    - production (uuid, foreign key to productions)
+    - person (uuid, foreign key to people)
+    - role_name (string)
+    - show_bio (text)
+    - role_type (csv, enum: see choices below)
+  - news
+    - id (uuid)
+    - title (string)
+    - slug (string)
+    - summary (text)
+    - content (text)
+    - featured_image (uuid, foreign key to directus_files)
+    - status (string, enum: draft, published, archived)
+    - is_pinned (boolean)
+    - related_productions (alias, many-to-many via news_productions)
+  - news_productions
+    - id (int)
+    - news_id (uuid, foreign key to news)
+    - productions_id (uuid, foreign key to productions)
+  - people
+    - id (uuid)
+    - first_name (string)
+    - last_name (string)
+    - middle_name (string)
+    - preferred_display_name (string)
+    - email (string)
+    - phone_number (string)
+    - bio (text)
+    - headshot (uuid, foreign key to directus_files)
+    - year_joined (int)
+    - is_hidden (boolean)
+  - performances
+    - id (uuid)
+    - production (uuid, foreign key to productions)
+    - is_sold_out (boolean)
+    - performance_datetime (datetime)
+    - notes (text)
+    - video (uuid, foreign key to directus_files)
+  - photos
+    - id (int)
+    - photo_file (uuid, foreign key to directus_files)
+    - related_productions (alias, many-to-many via photos_productions)
+    - related_people (alias, many-to-many via photos_people)
+    - related_performances (alias, many-to-many via photos_performances)
+    - related_venues (alias, many-to-many via photos_venues)
+    - caption (string)
+    - credit (string)
+  - photos_people
+    - id (int)
+    - photos_id (int, foreign key to photos)
+    - people_id (uuid, foreign key to people)
+  - photos_performances
+    - id (int)
+    - photos_id (int, foreign key to photos)
+    - performances_id (uuid, foreign key to performances)
+  - photos_productions
+    - id (int)
+    - photos_id (int, foreign key to photos)
+    - productions_id (uuid, foreign key to productions)
+  - photos_venues
+    - id (int)
+    - photos_id (int, foreign key to photos)
+    - venues_id (int, foreign key to venues)
+  - productions
+    - id (uuid)
+    - show (int, foreign key to shows)
+    - ticket_link (string)
+    - program_pdf (uuid, foreign key to directus_files)
+    - slug (string)
+    - venue (int, foreign key to venues)
+    - status (string, enum: upcoming, current, past)
+    - opening_date (date)
+    - closing_date (date)
+    - is_archived (boolean)
+    - season (string, enum: see season choices below)
+  - shows
+    - id (int)
+    - name (string)
+    - book_author (string)
+    - music_author (string)
+    - lyrics_author (string)
+    - description (text)
+    - genre (string)
+    - rights_holder (string)
+    - poster_image (uuid, foreign key to directus_files)
+    - slug (string)
+    - duration_minutes (int)
+    - content_warnings (csv, enum: see choices below)
+  - sponsors
+    - id (int)
+    - name (string)
+    - logo (uuid, foreign key to directus_files)
+    - program_ad (uuid, foreign key to directus_files)
+    - website_url (string)
+    - description (text)
+    - sponsorship_level (string, enum: level_1, level_2, leading_role, director, producer)
+    - sponsored_productions (alias, many-to-many via sponsors_productions)
+  - sponsors_productions
+    - id (int)
+    - sponsors_id (int, foreign key to sponsors)
+    - productions_id (uuid, foreign key to productions)
+  - venues
+    - id (int)
+    - name (string)
+    - street_1 (string)
+    - street_2 (string)
+    - street_3 (string)
+    - city (string)
+    - zip (string)
+    - description (text)
+    - seating_capacity (int)
+    - accessibility_notes (text)
+    - state (string, enum: list of US states and DC)
+    - slug (string)
+
+cast_crew.role_type choices:
+  - cast
+  - director
+  - asst_director
+  - music_director
+  - orchestra_member
+  - technical_director
+  - stage_manager
+  - asst_stage_manager
+  - executive_producer
+  - producer
+  - stagehand
+  - set_designer
+  - set_builder
+  - lighting_designer
+  - sound_designer
+  - costume_designer
+  - projection_designer
+  - props_master
+  - choreographer
+  - fight_coordinator
+  - intimacy_coordinator
+  - sound_engineer
+  - lighting_board_operator
+  - sound_board_operator
+  - house_manager
+  - box_office_manager
+  - publicity_marketing
+  - program_designer
+  - photographer
+  - videographer
+
+productions.season choices:
+  - 2027-28
+  - 2026-27
+  - 2025-26
+  - 2024-25
+  - 2023-24
+  - 2022-23
+  - 2021-22
+  - 2020-21
+  - 2019-20
+  - 2018-19
+  - 2017-18
+  - 2016-17
+  - 2015-16
+  - 2014-15
+  - 2013-14
+  - 2012-13
+  - 2011-12
+  - 2010-11
+  - 2009-10
+  - 2008-09
+  - 2007-08
+  - 2006-07
+  - 2005-06
+
+shows.content_warnings choices:
+  - violence
+  - graphic_violence
+  - stage_combat
+  - gunshots_loud_noises
+  - blood_effects
+  - death_dying
+  - sexual_content
+  - nudity
+  - simulated_intimacy
+  - drug_use
+  - alcohol_use
+  - smoking_vaping
+  - suicide_self_harm
+  - mental_illness
+  - eating_disorders
+  - domestic_violence
+  - sexual_assault_abuse
+  - child_abuse
+  - racism_racial_slurs
+  - homophobia_transphobia
+  - misogyny_sexism
+  - religious_content
+  - war_military_violence
+  - terminal_illness_cancer
+  - strobe_lights_flashing
+  - fog_haze_effects
+  - strong_language_profanity
+  - animal_cruelty
+  - body_horror
+  - pregnancy_loss
