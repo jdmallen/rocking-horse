@@ -203,13 +203,20 @@ onMounted(() => {
 }
 
 .nav-container {
-	max-width: 75rem;
+	width: 100%;
 	margin: 0 auto;
 	padding: 0 1rem;
 	display: flex;
 	align-items: center;
 	gap: 2rem;
 	height: 4rem;
+}
+
+/* lg */
+@media screen and (width >= 1024px) {
+	.nav-container {
+		max-width: 75rem;
+	}
 }
 
 .nav-logo {
@@ -297,7 +304,7 @@ onMounted(() => {
 }
 
 .mobile-menu-toggle {
-	display: none;
+	display: block;
 	background: none;
 	border: none;
 	cursor: pointer;
@@ -312,7 +319,7 @@ onMounted(() => {
 }
 
 .mobile-menu {
-	display: none;
+	display: block;
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -380,23 +387,19 @@ onMounted(() => {
 	font-weight: 600;
 }
 
-@media (width <= 768px) {
-	.nav-item:not(:last-child) {
-		display: none;
-	}
-
-	.mobile-menu-toggle {
-		display: block;
-	}
-
-	.mobile-menu {
-		display: block;
-	}
+/* Mobile-first styles - xs is default */
+.nav-item:not(:last-child) {
+	display: none;
 }
 
-@media (width >= 769px) {
+/* md and up - show desktop navigation */
+@media screen and (width >= 768px) {
 	.nav-logo-image {
 		max-height: 3.125rem;
+	}
+
+	.nav-item:not(:last-child) {
+		display: block;
 	}
 
 	.mobile-menu-toggle {

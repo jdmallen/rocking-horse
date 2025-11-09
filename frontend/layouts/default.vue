@@ -113,9 +113,17 @@ useHead({
 }
 
 .main-container {
-	max-width: 75rem;
+	width: 100%;
 	margin: 0 auto;
 	padding: 2rem 1rem;
+}
+
+/* lg */
+@media screen and (width >= 1024px) {
+	.main-container {
+		max-width: 75rem;
+		padding: var(--size-5xl) var(--size-4xl);
+	}
 }
 
 /* Footer Styles */
@@ -126,9 +134,17 @@ useHead({
 }
 
 .footer-container {
-	max-width: 75rem;
+	width: 100%;
 	margin: 0 auto;
 	padding: 3rem 1rem 1rem;
+}
+
+/* lg */
+@media screen and (width >= 1024px) {
+	.footer-container {
+		max-width: 75rem;
+		padding: var(--size-6xl) var(--size-4xl) var(--size-4xl);
+	}
 }
 
 .footer-content {
@@ -234,26 +250,16 @@ useHead({
 	color: var(--clr-slate);
 }
 
-/* Responsive Design */
-@media (width >= 768px) {
+/* Responsive Design - Mobile First */
+@media screen and (width >= 768px) {
 	.logo-image {
 		max-height: 5rem;
-	}
-
-	.main-container {
-		padding: var(--size-5xl) var(--size-4xl);
 	}
 
 	.footer-bottom {
 		flex-direction: row;
 		justify-content: space-between;
 		text-align: left;
-	}
-}
-
-@media (width >= 1024px) {
-	.footer-container {
-		padding: var(--size-6xl) var(--size-4xl) var(--size-4xl);
 	}
 }
 </style>

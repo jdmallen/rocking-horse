@@ -205,8 +205,8 @@ const visibleFields = computed(() => {
 
 .person-modal-content {
 	display: grid;
-	grid-template-columns: 1fr 2fr;
-	gap: 2rem;
+	grid-template-columns: 1fr;
+	gap: 1rem;
 	max-width: 50rem;
 	width: 100%;
 }
@@ -304,10 +304,10 @@ const visibleFields = computed(() => {
 	background: #f5f5f5;
 }
 
-@media (width <= 768px) {
+@media screen and (width >= 768px) {
 	.person-modal-content {
-		grid-template-columns: 1fr;
-		gap: 1rem;
+		grid-template-columns: 1fr 2fr;
+		gap: 2rem;
 	}
 }
 </style>

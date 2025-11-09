@@ -148,13 +148,17 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 	--size-10xl: 10rem;
 }
 
-* {
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 	margin: 0;
 	line-height: calc(1em + 0.5rem);
 }
 
 html {
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 body {
@@ -163,6 +167,7 @@ body {
 	font-style: normal;
 	background-color: var(--clr-body-bg);
 	color: var(--clr-body-color);
+	overflow-x: hidden;
 }
 
 img,

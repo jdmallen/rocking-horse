@@ -149,7 +149,6 @@ const visibleFields = computed(() => {
 .venue-card {
 	position: relative;
 	width: 100%;
-	max-width: min(21.875rem, 100vw);
 	min-height: 12.5rem;
 	cursor: pointer;
 	border-radius: 0.5rem;
@@ -222,7 +221,6 @@ const visibleFields = computed(() => {
 }
 
 .venue-modal-content {
-	max-width: 37.5rem;
 	width: 100%;
 }
 
@@ -256,13 +254,14 @@ const visibleFields = computed(() => {
 	line-height: 1.5;
 }
 
-@media (width <= 768px) {
+/* Mobile-first responsive design */
+@media screen and (width >= 768px) {
 	.venue-card {
-		max-width: 100%;
+		max-width: min(21.875rem, 100vw);
 	}
 
 	.venue-modal-content {
-		max-width: 100%;
+		max-width: 37.5rem;
 	}
 }
 </style>
