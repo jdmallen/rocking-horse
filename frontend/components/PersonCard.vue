@@ -70,8 +70,8 @@
 			>
 			<button
 				class="close-button"
-				@click="showLargeImage = false"
 				aria-label="Close large image"
+				@click="showLargeImage = false"
 			>
 				×
 			</button>
@@ -259,11 +259,8 @@ const visibleFields = computed(() => {
 
 .image-overlay {
 	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(0, 0, 0, 0.8);
+	inset: 0;
+	background: rgb(0 0 0 / 80%);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -300,7 +297,7 @@ const visibleFields = computed(() => {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 2px 8px rgb(0 0 0 / 30%);
 }
 
 .close-button:hover {

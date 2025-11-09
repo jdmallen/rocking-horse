@@ -39,6 +39,35 @@ export async function getPhoto(id) {
 	}
 }
 
+export async function getVenues() {
+	const { $directus, $readItems } = useNuxtApp();
+
+	try {
+		console.log('Making request to Directus for venues...');
+		console.log('Directus URL:', $directus.url);
+
+		const venues = await $directus.request($readItems('venues'));
+		console.log('Venues response received:', venues);
+		return venues;
+	} catch (error) {
+		console.error('Error fetching Venues collection:', error);
+		console.error('Error details:', error.response?.data || error.message);
+		throw error;
+	}
+}
+
+export async function getVenue(id) {
+	const { $directus, $readItem } = useNuxtApp();
+
+	try {
+		const venue = await $directus.request($readItem('venues', id));
+		return venue;
+	} catch (error) {
+		console.error('Error fetching venue:', error);
+		throw error;
+	}
+}
+
 export function getAssetUrl(assetId) {
 	if (!assetId) return null;
 	let baseUrl;
