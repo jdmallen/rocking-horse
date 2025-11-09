@@ -137,7 +137,7 @@ const visibleFields = computed(() => {
 <style scoped>
 .venue-list-item {
 	padding: 0.5rem;
-	border-bottom: 1px solid #e5e7eb;
+	border-bottom: 0.0625rem solid #e5e7eb;
 	cursor: pointer;
 	transition: background-color 0.2s;
 }
@@ -149,15 +149,15 @@ const visibleFields = computed(() => {
 .venue-card {
 	position: relative;
 	width: 100%;
-	max-width: min(350px, 100vw);
-	min-height: 200px;
+	max-width: min(21.875rem, 100vw);
+	min-height: 12.5rem;
 	cursor: pointer;
-	border-radius: 8px;
+	border-radius: 0.5rem;
 	overflow: hidden;
-	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%);
+	box-shadow: 0 0.25rem 0.375rem -0.0625rem rgb(0 0 0 / 10%);
 	transition: transform 0.2s;
 	background: white;
-	border: 1px solid #e5e7eb;
+	border: 0.0625rem solid #e5e7eb;
 }
 
 .venue-card:hover {
@@ -222,7 +222,7 @@ const visibleFields = computed(() => {
 }
 
 .venue-modal-content {
-	max-width: 600px;
+	max-width: 37.5rem;
 	width: 100%;
 }
 

@@ -2,15 +2,6 @@
 	<div class="app-layout">
 		<!-- Header with Navigation -->
 		<header class="site-header">
-			<div class="header-container">
-				<!-- Logo/Site Title -->
-				<div class="site-branding">
-					<NuxtLink to="/" class="site-logo">
-						<h1 class="site-title">Rocking Horse Productions</h1>
-					</NuxtLink>
-				</div>
-			</div>
-			<!-- Navigation -->
 			<MainNavigation />
 		</header>
 
@@ -110,64 +101,39 @@ useHead({
 
 /* Header Styles */
 .site-header {
-	background: #fff;
-	box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 	position: sticky;
 	top: 0;
 	z-index: 100;
 }
 
-.header-container {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 1rem;
-}
-
-.site-branding {
-	text-align: center;
-}
-
-.site-logo {
-	text-decoration: none;
-	color: inherit;
-}
-
-.site-title {
-	font-size: 2rem;
-	font-weight: 700;
-	color: #1f2937;
-	margin: 0;
-	letter-spacing: -0.025em;
-}
-
 /* Main Content */
 .site-main {
 	flex: 1;
-	background: #f9fafb;
+	background: var(--clr-body-bg);
 }
 
 .main-container {
-	max-width: 1200px;
+	max-width: 75rem;
 	margin: 0 auto;
 	padding: 2rem 1rem;
 }
 
 /* Footer Styles */
 .site-footer {
-	background: #1f2937;
-	color: #d1d5db;
+	background: var(--clr-dark);
+	color: var(--clr-light);
 	margin-top: auto;
 }
 
 .footer-container {
-	max-width: 1200px;
+	max-width: 75rem;
 	margin: 0 auto;
 	padding: 3rem 1rem 1rem;
 }
 
 .footer-content {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
 	gap: 2rem;
 	margin-bottom: 2rem;
 }
@@ -179,24 +145,24 @@ useHead({
 }
 
 .footer-title {
-	font-size: 1.5rem;
+	font-size: var(--size-2xl);
 	font-weight: 700;
-	color: #fff;
+	color: var(--clr-light);
 	margin: 0;
 }
 
 .footer-description {
-	font-size: 0.875rem;
+	font-size: var(--size-sm);
 	line-height: 1.6;
-	color: #9ca3af;
+	color: var(--clr-slate);
 	margin: 0;
 }
 
 .footer-heading {
-	font-size: 1.125rem;
+	font-size: var(--size-lg);
 	font-weight: 600;
-	color: #fff;
-	margin: 0 0 0.5rem;
+	color: var(--clr-light);
+	margin: 0 0 var(--size-xs);
 }
 
 .footer-links {
@@ -210,15 +176,15 @@ useHead({
 
 .footer-links a,
 .footer-legal a {
-	color: #d1d5db;
+	color: var(--clr-slate);
 	text-decoration: none;
-	font-size: 0.875rem;
+	font-size: var(--size-sm);
 	transition: color 0.2s;
 }
 
 .footer-links a:hover,
 .footer-legal a:hover {
-	color: #fff;
+	color: var(--clr-light);
 }
 
 .social-links {
@@ -227,55 +193,55 @@ useHead({
 }
 
 .social-link {
-	color: #d1d5db;
+	color: var(--clr-slate);
 	transition: color 0.2s;
 }
 
 .social-link:hover {
-	color: #fff;
+	color: var(--clr-light);
 }
 
 .social-icon {
-	width: 1.5rem;
-	height: 1.5rem;
+	width: var(--size-2xl);
+	height: var(--size-2xl);
 }
 
 .footer-bottom {
-	border-top: 1px solid #374151;
-	padding-top: 1.5rem;
+	border-top: 0.0625rem solid var(--clr-slate);
+	padding-top: var(--size-2xl);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 1rem;
+	gap: var(--size-base);
 	text-align: center;
 }
 
 .footer-copyright p {
-	font-size: 0.875rem;
-	color: #9ca3af;
+	font-size: var(--size-sm);
+	color: var(--clr-slate);
 	margin: 0;
 }
 
 .footer-legal {
 	display: flex;
 	align-items: center;
-	gap: 1rem;
-	font-size: 0.875rem;
+	gap: var(--size-base);
+	font-size: var(--size-sm);
 }
 
 
 .separator {
-	color: #6b7280;
+	color: var(--clr-slate);
 }
 
 /* Responsive Design */
 @media (width >= 768px) {
-	.site-title {
-		font-size: 2.5rem;
+	.logo-image {
+		max-height: 5rem;
 	}
 
 	.main-container {
-		padding: 3rem 2rem;
+		padding: var(--size-5xl) var(--size-4xl);
 	}
 
 	.footer-bottom {
@@ -286,12 +252,8 @@ useHead({
 }
 
 @media (width >= 1024px) {
-	.header-container {
-		padding: 1.5rem 2rem;
-	}
-
 	.footer-container {
-		padding: 4rem 2rem 2rem;
+		padding: var(--size-6xl) var(--size-4xl) var(--size-4xl);
 	}
 }
 </style>

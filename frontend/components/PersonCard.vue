@@ -146,7 +146,7 @@ const visibleFields = computed(() => {
 <style scoped>
 	.person-list-item {
 	padding: 0.5rem;
-	border-bottom: 1px solid #e5e7eb;
+	border-bottom: 0.0625rem solid #e5e7eb;
 	cursor: pointer;
 	transition: background-color 0.2s;
 }
@@ -158,12 +158,12 @@ const visibleFields = computed(() => {
 .person-card {
 	position: relative;
 	width: 100%;
-	max-width: min(300px, 100vw);
+	max-width: min(18.75rem, 100vw);
 	aspect-ratio: 1;
 	cursor: pointer;
-	border-radius: 8px;
+	border-radius: 0.5rem;
 	overflow: hidden;
-	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%);
+	box-shadow: 0 0.25rem 0.375rem -0.0625rem rgb(0 0 0 / 10%);
 	transition: transform 0.2s;
 }
 
@@ -200,14 +200,14 @@ const visibleFields = computed(() => {
 	padding: 0.75rem;
 	text-align: center;
 	font-weight: 600;
-	backdrop-filter: blur(4px);
+	backdrop-filter: blur(0.25rem);
 }
 
 .person-modal-content {
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 	gap: 2rem;
-	max-width: 800px;
+	max-width: 50rem;
 	width: 100%;
 }
 
@@ -215,7 +215,7 @@ const visibleFields = computed(() => {
 	width: 100%;
 	aspect-ratio: 1;
 	object-fit: cover;
-	border-radius: 8px;
+	border-radius: 0.5rem;
 }
 
 .modal-headshot-placeholder {
@@ -279,25 +279,25 @@ const visibleFields = computed(() => {
 	max-width: 100%;
 	max-height: 100%;
 	object-fit: contain;
-	border-radius: 8px;
+	border-radius: 0.5rem;
 }
 
 .close-button {
 	position: absolute;
-	top: -10px;
-	right: -10px;
+	top: -0.625rem;
+	right: -0.625rem;
 	background: #fff;
 	border: none;
 	border-radius: 50%;
-	width: 32px;
-	height: 32px;
-	font-size: 20px;
+	width: 2rem;
+	height: 2rem;
+	font-size: 1.25rem;
 	font-weight: bold;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: 0 2px 8px rgb(0 0 0 / 30%);
+	box-shadow: 0 0.125rem 0.5rem rgb(0 0 0 / 30%);
 }
 
 .close-button:hover {

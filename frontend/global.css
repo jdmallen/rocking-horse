@@ -1,4 +1,4 @@
-/* 
+/*
 Setting a bunch of baseline defaults so we can have a consistent starting
 point for our styles.
 
@@ -10,26 +10,20 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 	/* https://coolors.co/7e0112-440812-090f11-6587d7-fff9fb-ed9b40 */
 
 	/* https://coolors.co/04080f-507dbc-60a561-efcb68-ebbe9b-800000-fafafa */
-	
+
 	/* colors */
 	--hsl-charcoal-huesat: 197deg 37%;
 	--hsl-charcoal-lum: 24%;
-
 	--hsl-persian-green-huesat: 173deg 58%;
 	--hsl-persian-green-lum: 39%;
-
 	--hsl-saffron-huesat: 43deg 74%;
 	--hsl-saffron-lum: 66%;
-
 	--hsl-sandy-brown-huesat: 27deg 87%;
 	--hsl-sandy-brown-lum: 67%;
-
 	--hsl-burnt-sienna-huesat: 12deg 76%;
 	--hsl-burnt-sienna-lum: 61%;
-
 	--hsl-red-pantone-huesat: 353deg 86%;
 	--hsl-red-pantone-lum: 54%;
-
 	--hsl-falu-red-huesat: 4deg 98%; /* original Rocking Horse site red */
 	--hsl-falu-red-lum: 25%;/* original Rocking Horse site red */
 
@@ -44,7 +38,6 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 	--hsl-onyx-lum: 20%;
 	--hsl-silver-huesat: 216deg 5%;
 	--hsl-silver-lum: 79%;
-
 	--hsl-black-huesat: 0deg 0%;
 	--hsl-black-lum: 0%;
 	--hsl-white-huesat: 0deg 0%;
@@ -55,18 +48,15 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 	--hsl-seasalt-lum: 97%;
 	--hsl-slate-gray-huesat: 199deg 15%;
 	--hsl-slate-gray-lum: 51%;
-
 	--hsl-dark-huesat: var(--hsl-rich-black-huesat);
 	--hsl-dark-lum: var(--hsl-rich-black-lum);
 	--hsl-light-huesat: var(--hsl-seasalt-huesat);
 	--hsl-light-lum: var(--hsl-seasalt-lum);
 	--hsl-slate-huesat: var(--hsl-slate-gray-huesat);
 	--hsl-slate-lum: var(--hsl-slate-gray-lum);
-
 	--clr-dark: hsl(var(--hsl-dark-huesat) var(--hsl-dark-lum));
 	--clr-light: hsl(var(--hsl-light-huesat) var(--hsl-light-lum));
 	--clr-slate: hsl(var(--hsl-slate-huesat) var(--hsl-slate-lum));
-
 	--hsl-primary-huesat: var(--hsl-charcoal-huesat);
 	--hsl-primary-lum: var(--hsl-charcoal-lum);
 	--hsl-secondary-huesat: var(--hsl-sandy-brown-huesat);
@@ -81,7 +71,6 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 	--hsl-warning-lum: var(--hsl-saffron-lum);
 	--hsl-danger-huesat: var(--hsl-red-pantone-huesat);
 	--hsl-danger-lum: var(--hsl-red-pantone-lum);
-
 	--clr-primary: hsl(var(--hsl-primary-huesat) var(--hsl-primary-lum));
 	--clr-secondary: hsl(var(--hsl-secondary-huesat) var(--hsl-secondary-lum));
 	--clr-tertiary: hsl(var(--hsl-tertiary-huesat) var(--hsl-tertiary-lum));
@@ -89,19 +78,16 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 	--clr-success: hsl(var(--hsl-success-huesat) var(--hsl-success-lum));
 	--clr-warning: hsl(var(--hsl-warning-huesat) var(--hsl-warning-lum));
 	--clr-danger: hsl(var(--hsl-danger-huesat) var(--hsl-danger-lum));
-	
 	--hsl-body-color-huesat: var(--hsl-dark-huesat);
 	--hsl-body-color-lum: var(--hsl-dark-lum);
 	--hsl-body-bg-huesat: var(--hsl-light-huesat);
 	--hsl-body-bg-lum: var(--hsl-light-lum);
-
 	--hsl-emphasis-huesat: var(--hsl-black-huesat);
 	--hsl-emphasis-lum: var(--hsl-black-lum);
 	--hsl-box-shadow-huesat: var(--hsl-rich-black-huesat);
 	--hsl-box-shadow-lum: var(--hsl-rich-black-lum);
 	--hsl-box-shadow-emphasis-huesat: var(--hsl-black-huesat);
 	--hsl-box-shadow-emphasis-lum: var(--hsl-black-lum);
-
 	--clr-emphasis: hsl(var(--hsl-emphasis-huesat) var(--hsl-emphasis-lum));
 	--clr-body-color: hsl(var(--hsl-body-color-huesat) var(--hsl-body-color-lum));
 	--clr-body-bg: hsl(var(--hsl-body-bg-huesat) var(--hsl-body-bg-lum));
@@ -113,7 +99,6 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 		--hsl-body-color-lum: var(--hsl-dark-lum);
 		--hsl-body-bg-huesat: var(--hsl-light-huesat);
 		--hsl-body-bg-lum: var(--hsl-light-lum);
-
 		--hsl-emphasis-huesat: var(--hsl-black-huesat);
 		--hsl-emphasis-lum: var(--hsl-black-lum);
 		--hsl-box-shadow-huesat: var(--hsl-rich-black-huesat);
@@ -127,7 +112,6 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 		--hsl-body-color-lum: var(--hsl-light-lum);
 		--hsl-body-bg-huesat: var(--hsl-dark-huesat);
 		--hsl-body-bg-lum: var(--hsl-dark-lum);
-
 		--hsl-emphasis-huesat: var(--hsl-white-huesat);
 		--hsl-emphasis-lum: var(--hsl-white-lum);
 		--hsl-box-shadow-huesat: var(--hsl-seasalt-huesat);

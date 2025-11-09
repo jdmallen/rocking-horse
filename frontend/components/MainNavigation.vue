@@ -1,6 +1,17 @@
 <template>
 	<nav class="main-navigation" role="navigation" aria-label="Main Navigation">
 		<div class="nav-container">
+			<!-- Logo -->
+			<div class="nav-logo">
+				<NuxtLink to="/" class="logo-link">
+					<img
+						src="/Rocking-Horse-Logo-20-Horizontal-front-white.png"
+						alt="Rocking Horse Productions"
+						class="nav-logo-image"
+					>
+				</NuxtLink>
+			</div>
+
 			<!-- About -->
 			<div class="nav-item">
 				<NuxtLink to="/about" class="nav-link">
@@ -185,20 +196,39 @@ onMounted(() => {
 
 <style scoped>
 .main-navigation {
-	background: #fff;
-	border-bottom: 1px solid #e5e7eb;
+	background: var(--clr-primary);
+	border-bottom: 0.0625rem solid var(--clr-box-shadow);
 	position: relative;
 	z-index: 100;
 }
 
 .nav-container {
-	max-width: 1200px;
+	max-width: 75rem;
 	margin: 0 auto;
 	padding: 0 1rem;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	height: 64px;
+	gap: 2rem;
+	height: 4rem;
+}
+
+.nav-logo {
+	margin-right: auto;
+	display: flex;
+	align-items: center;
+}
+
+.logo-link {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+}
+
+.nav-logo-image {
+	height: auto;
+	max-height: 2.5rem;
+	width: auto;
+	object-fit: contain;
 }
 
 .nav-item {
@@ -211,17 +241,18 @@ onMounted(() => {
 	gap: 0.25rem;
 	padding: 1rem;
 	text-decoration: none;
-	color: #374151;
+	color: var(--clr-light);
 	font-weight: 500;
 	transition: color 0.2s;
 	background: none;
 	border: none;
 	cursor: pointer;
 	font-size: 1rem;
+	white-space: nowrap;
 }
 
 .nav-link:hover {
-	color: #1f2937;
+	color: var(--clr-secondary);
 }
 
 .dropdown-trigger {
@@ -242,11 +273,11 @@ onMounted(() => {
 	position: absolute;
 	top: 100%;
 	left: 0;
-	background: white;
-	border: 1px solid #e5e7eb;
-	border-radius: 8px;
-	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%);
-	min-width: 200px;
+	background: var(--clr-body-bg);
+	border: 0.0625rem solid var(--clr-box-shadow);
+	border-radius: 0.5rem;
+	box-shadow: 0 0.625rem 0.9375rem -0.1875rem var(--clr-box-shadow-emphasis);
+	min-width: 12.5rem;
 	padding: 0.5rem 0;
 	z-index: 50;
 }
@@ -255,14 +286,14 @@ onMounted(() => {
 	display: block;
 	padding: 0.75rem 1rem;
 	text-decoration: none;
-	color: #374151;
+	color: var(--clr-body-color);
 	transition: background-color 0.2s;
 	white-space: nowrap;
 }
 
 .dropdown-item:hover {
-	background-color: #f9fafb;
-	color: #1f2937;
+	background-color: var(--clr-secondary);
+	color: var(--clr-light);
 }
 
 .mobile-menu-toggle {
@@ -271,7 +302,7 @@ onMounted(() => {
 	border: none;
 	cursor: pointer;
 	padding: 0.5rem;
-	color: #374151;
+	color: var(--clr-light);
 }
 
 .menu-icon {
@@ -286,8 +317,8 @@ onMounted(() => {
 	top: 100%;
 	left: 0;
 	right: 0;
-	background: white;
-	border-bottom: 1px solid #e5e7eb;
+	background: var(--clr-primary);
+	border-bottom: 0.0625rem solid var(--clr-box-shadow);
 	padding: 1rem;
 	z-index: 40;
 }
@@ -299,13 +330,13 @@ onMounted(() => {
 	text-align: left;
 	padding: 0.75rem 0;
 	text-decoration: none;
-	color: #374151;
+	color: var(--clr-light);
 	font-weight: 500;
 	border: none;
 	background: none;
 	cursor: pointer;
 	font-size: 1rem;
-	border-bottom: 1px solid #f3f4f6;
+	border-bottom: 0.0625rem solid var(--clr-box-shadow);
 }
 
 .mobile-nav-trigger {
@@ -333,19 +364,19 @@ onMounted(() => {
 	display: block;
 	padding: 0.5rem 0;
 	text-decoration: none;
-	color: #6b7280;
+	color: var(--clr-slate);
 	font-size: 0.875rem;
 }
 
 .mobile-nav-link:hover,
 .mobile-nav-trigger:hover,
 .mobile-nav-sublink:hover {
-	color: #1f2937;
+	color: var(--clr-secondary);
 }
 
 /* Active states */
 .router-link-active {
-	color: #1f2937;
+	color: var(--clr-secondary);
 	font-weight: 600;
 }
 
@@ -364,9 +395,8 @@ onMounted(() => {
 }
 
 @media (width >= 769px) {
-	.nav-container {
-		justify-content: center;
-		gap: 2rem;
+	.nav-logo-image {
+		max-height: 3.125rem;
 	}
 
 	.mobile-menu-toggle {
