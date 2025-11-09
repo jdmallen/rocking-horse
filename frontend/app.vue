@@ -24,40 +24,64 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 	/* colors */
 	--hsl-charcoal-huesat: 197deg 37%;
 	--hsl-charcoal-lum: 24%;
+	--charcoal: #274754;
+	--hsl-chocolate-cosmos-huesat: 350deg 79%;
+	--hsl-chocolate-cosmos-lum: 15%;
+	--chocolate-cosmos: #440812;
 	--hsl-persian-green-huesat: 173deg 58%;
 	--hsl-persian-green-lum: 39%;
+	--persian-green: #2a9d90;
 	--hsl-saffron-huesat: 43deg 74%;
 	--hsl-saffron-lum: 66%;
+	--saffron: #e8c468;
 	--hsl-sandy-brown-huesat: 27deg 87%;
 	--hsl-sandy-brown-lum: 67%;
+	--sandy-brown: #f4a462;
 	--hsl-burnt-sienna-huesat: 12deg 76%;
 	--hsl-burnt-sienna-lum: 61%;
+	--burnt-sienna: #e76e50;
 	--hsl-red-pantone-huesat: 353deg 86%;
 	--hsl-red-pantone-lum: 54%;
+	--red-pantone: #ef253c;
 	--hsl-falu-red-huesat: 4deg 98%; /* original Rocking Horse site red */
 	--hsl-falu-red-lum: 25%;/* original Rocking Horse site red */
+	--falu-red: #7e0a01;
 
 	/* neutrals */
 	--hsl-anti-flat-white-huesat: 200deg 7%;
 	--hsl-anti-flat-white-lum: 92%;
+	--anti-flat-white: hsl(200deg 7% 92%);
 	--hsl-battleship-gray-huesat: 200deg 1%;
 	--hsl-battleship-gray-lum: 55%;
+	--battleship-gray: hsl(200deg 1% 55%);
 	--hsl-blacky-huesat: 154deg 47%;
 	--hsl-blacky-lum: 3%;
+	--blacky: hsl(154deg 47% 3%);
 	--hsl-onyx-huesat: 150deg 4%;
 	--hsl-onyx-lum: 20%;
+	--onyx: hsl(150deg 4% 20%);
 	--hsl-silver-huesat: 216deg 5%;
 	--hsl-silver-lum: 79%;
+	--silver: hsl(216deg 5% 79%);
 	--hsl-black-huesat: 0deg 0%;
 	--hsl-black-lum: 0%;
+	--black: hsl(0deg 0% 0%);
 	--hsl-white-huesat: 0deg 0%;
 	--hsl-white-lum: 100%;
+	--white: hsl(0deg 0% 100%);
 	--hsl-rich-black-huesat: 218deg 58%;
 	--hsl-rich-black-lum: 4%;
+	--rich-black: hsl(218deg 58% 4%);
 	--hsl-seasalt-huesat: 0deg 0%;
 	--hsl-seasalt-lum: 97%;
-	--hsl-slate-gray-huesat: 199deg 15%;
-	--hsl-slate-gray-lum: 51%;
+	--seasalt: hsl(0deg 0% 97%);
+	--hsl-slate-gray-huesat: 199deg 8%;
+	--hsl-slate-gray-lum: 53%;
+	--slate-gray: hsl(199, 8%, 53%);
+	--hsl-poppy-huesat: 355deg 71%;
+	--hsl-poppy-lum: 51%;
+	--poppy: hsl(355deg 71% 51%);
+
 	--hsl-dark-huesat: var(--hsl-rich-black-huesat);
 	--hsl-dark-lum: var(--hsl-rich-black-lum);
 	--hsl-light-huesat: var(--hsl-seasalt-huesat);
@@ -69,8 +93,8 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 	--clr-slate: hsl(var(--hsl-slate-huesat) var(--hsl-slate-lum));
 	--hsl-primary-huesat: var(--hsl-charcoal-huesat);
 	--hsl-primary-lum: var(--hsl-charcoal-lum);
-	--hsl-secondary-huesat: var(--hsl-sandy-brown-huesat);
-	--hsl-secondary-lum: var(--hsl-sandy-brown-lum);
+	--hsl-secondary-huesat: var(--hsl-poppy-huesat);
+	--hsl-secondary-lum: var(--hsl-poppy-lum);
 	--hsl-tertiary-huesat: var(--hsl-burnt-sienna-huesat);
 	--hsl-tertiary-lum: var(--hsl-burnt-sienna-lum);
 	--hsl-info-huesat: var(--hsl-charcoal-huesat);
@@ -90,8 +114,8 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 	--clr-danger: hsl(var(--hsl-danger-huesat) var(--hsl-danger-lum));
 	--hsl-body-color-huesat: var(--hsl-dark-huesat);
 	--hsl-body-color-lum: var(--hsl-dark-lum);
-	--hsl-body-bg-huesat: var(--hsl-light-huesat);
-	--hsl-body-bg-lum: var(--hsl-light-lum);
+	--hsl-body-bg-huesat: var(--hsl-blacky-huesat);
+	--hsl-body-bg-lum: var(--hsl-blacky-lum);
 	--hsl-emphasis-huesat: var(--hsl-black-huesat);
 	--hsl-emphasis-lum: var(--hsl-black-lum);
 	--hsl-box-shadow-huesat: var(--hsl-rich-black-huesat);
@@ -107,8 +131,8 @@ Credit to @slayingthedragon on YouTube for inspiring much of this!
 	@media (prefers-color-scheme: light) {
 		--hsl-body-color-huesat: var(--hsl-dark-huesat);
 		--hsl-body-color-lum: var(--hsl-dark-lum);
-		--hsl-body-bg-huesat: var(--hsl-light-huesat);
-		--hsl-body-bg-lum: var(--hsl-light-lum);
+		--hsl-body-bg-huesat: var(--hsl-blacky-huesat);
+		--hsl-body-bg-lum: var(--hsl-blacky-lum);
 		--hsl-emphasis-huesat: var(--hsl-black-huesat);
 		--hsl-emphasis-lum: var(--hsl-black-lum);
 		--hsl-box-shadow-huesat: var(--hsl-rich-black-huesat);

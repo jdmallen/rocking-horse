@@ -196,7 +196,7 @@ onMounted(() => {
 
 <style scoped>
 .main-navigation {
-	background: var(--clr-primary);
+	background: hsl(var(--hsl-chocolate-cosmos-huesat) var(--hsl-chocolate-cosmos-lum));
 	border-bottom: 0.0625rem solid var(--clr-box-shadow);
 	position: relative;
 	z-index: 100;
@@ -280,7 +280,7 @@ onMounted(() => {
 	position: absolute;
 	top: 100%;
 	left: 0;
-	background: var(--clr-body-bg);
+	background: hsl(var(--hsl-chocolate-cosmos-huesat) var(--hsl-chocolate-cosmos-lum));
 	border: 0.0625rem solid var(--clr-box-shadow);
 	border-radius: 0.5rem;
 	box-shadow: 0 0.625rem 0.9375rem -0.1875rem var(--clr-box-shadow-emphasis);
@@ -324,7 +324,7 @@ onMounted(() => {
 	top: 100%;
 	left: 0;
 	right: 0;
-	background: var(--clr-primary);
+	background: hsl(var(--hsl-chocolate-cosmos-huesat) var(--hsl-chocolate-cosmos-lum));
 	border-bottom: 0.0625rem solid var(--clr-box-shadow);
 	padding: 1rem;
 	z-index: 40;
